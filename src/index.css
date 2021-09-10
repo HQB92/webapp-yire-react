@@ -35,8 +35,15 @@ h1{
   justify-items: left;
   vertical-align: middle;
 }
-.form-control{
-  width: 60%;
+.container-fluid{
+  
+  min-height: 80vh;
+}
+.centrar-icon-text{
+  justify-items: center;
+
+  display: block !important;
+  align-items: center;
 }
 .div a{
   text-decoration: none;
@@ -72,6 +79,14 @@ a:hover{
     bottom: 0;
     width: 100%;
     z-index: 3;
+}
+.home a{
+  
+  color: #152f4f ;
+}
+.home{
+  background-color: whitesmoke;
+  padding: 30px !important;
 }
 .pb-5 {
   padding: 0 !important;
@@ -142,9 +157,9 @@ span {
   padding:0;
 }
 .centrar-login{
-  min-height: 400px;
+  min-height: 100%;
   align-items: center !important;
-  max-width: 80% !important;
+  max-width: 100% !important;
   vertical-align: middle;
 
 }

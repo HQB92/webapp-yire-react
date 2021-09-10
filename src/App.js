@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Footer from './components/footer';
 import Login from './components/login';
 import { Container } from 'react-bootstrap';
+import Header from './components/header';
+import Home from './components/home';
 
 function App() {
   return (
@@ -12,8 +14,9 @@ function App() {
           <Route exact path='/'>
             <Login></Login>
           </Route>
-          <Route path='*'>
-            error404
+          <Route path='/app'>
+            <Header></Header>
+            <Home></Home>
           </Route>
         </Switch>
         <Footer></Footer>

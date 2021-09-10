@@ -3,28 +3,30 @@ import { Form, Container, Button, Row, Col} from 'react-bootstrap';
 
 const Login= () =>{
     return(
-        <Container fluid>
+        <Container fluid="md" className="justify-content-md-center barra-login">
             <Row className="justify-content-md-center barra-login">
                 <Col md="auto"> <h1>Iniciar Sesión</h1></Col>
             </Row>
 
-            <Row className="justify-content-md-center centrar-login">
-                <Col md="md">
+
+            <Row >
+                <Col xs={2} md={2}></Col>
+                  <Col xs={8} md={8} >
                     <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Group className="mb-4" >
                             <Form.Label>Correo electronico</Form.Label>
                             <Form.Control type="email" placeholder="Ingres su Correo..." />
                         </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Group className="mb-5" >
                             <Form.Label>Contraseña</Form.Label>
                             <Form.Control type="password" placeholder="Contraseña..." />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" href="/app">
                             Iniciar Sesión
                         </Button>
                     </Form>
                 </Col>
+                <Col xs={4} md={2}></Col>
             </Row>
         </Container>
     )
