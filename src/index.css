@@ -4,23 +4,28 @@ body,
 html * {
   font-family: "Roboto", sans-serif;
 }
+
 @import 'bootstrap/dist/css/bootstrap.min.css';
 body {
   background-color: #152f4f;
 }
+
 .body-panddin{
   padding: 0;
 }
+
 .header-p {
   margin: 0px;
   padding: 0px;
   height: 11.3rem;
   background-color: whitesmoke;
 }
+
 h1{
   font-size: 50px;
   font-weight: bold;
 }
+
 .div {
   display: flex;
   text-align: right;
@@ -35,39 +40,46 @@ h1{
   justify-items: left;
   vertical-align: middle;
 }
+
 .container-fluid{
-  
-  min-height: 80vh;
+  min-height: 70vh;
 }
+
 .centrar-icon-text{
   justify-items: center;
 
   display: block !important;
   align-items: center;
 }
+
 .div a{
   text-decoration: none;
   color: whitesmoke;
   padding-left: 10px;
 }
+
 a{
   text-decoration: none;
   color: whitesmoke;
 }
+
 a:hover{
   font-weight: 500;
   text-shadow: 3px 3px 10px rgba(0, 0, 0,.45); 
   color: #e4b021 !important;
 }
+
 .Col{
   text-align: initial;
 }
+
 .Col, .Col2 a{
   text-decoration: none;
   color: whitesmoke;
   text-shadow: none !important;
   box-shadow: none !important;
 }
+
 .Col2{
   text-align: center;
 }
@@ -75,31 +87,37 @@ a:hover{
 .footer {
     background: #152f4f;
     color: whitesmoke;
-    position: fixed;
-    bottom: 0;
+    /*position: fixed;*/
+   
     width: 100%;
-    z-index: 3;
-}
-.home a{
   
+}
+
+.home a{
   color: #152f4f ;
 }
+
 .home{
   background-color: whitesmoke;
   padding: 30px !important;
 }
+
 .pb-5 {
   padding: 0 !important;
 }
+
 button{
   border: 0 !important;
 }
+
 .navbar-light .navbar-toggler {
   color: rgba(0,0,0,.0);
 }
+
 span{
   color: whitesmoke !important;
 }
+
 .header {
   min-height: 8rem;
   text-align: right;
@@ -111,11 +129,13 @@ span{
   color: darkgray;
   z-index: 10000;
 }
+.btn{
+  min-width: 120px;
+}
 
 .menu2{
   color: rgba(0,0,0,.55);
 }
-
 
 span {
   text-align: center;

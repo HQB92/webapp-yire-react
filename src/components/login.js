@@ -7,8 +7,6 @@ const Login= () =>{
             <Row className="justify-content-md-center barra-login">
                 <Col md="auto"> <h1>Iniciar Sesión</h1></Col>
             </Row>
-
-
             <Row >
                 <Col xs={2} md={2}></Col>
                   <Col xs={8} md={8} >
@@ -21,7 +19,7 @@ const Login= () =>{
                             <Form.Label>Contraseña</Form.Label>
                             <Form.Control type="password" placeholder="Contraseña..." />
                         </Form.Group>
-                        <Button variant="primary" type="submit" href="/app">
+                        <Button variant="primary" type="submit" href="/home">
                             Iniciar Sesión
                         </Button>
                     </Form>

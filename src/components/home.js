@@ -5,14 +5,14 @@ import FaceIcon from '@material-ui/icons/Face';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import SettingsInputHdmiIcon from '@material-ui/icons/SettingsInputHdmi';
 import NoteAddIcon from '@material-ui/icons/NoteAdd';
-import BurstModeIcon from '@material-ui/icons/BurstMode';
+import ViewCarouselIcon from '@material-ui/icons/ViewCarousel';
 
 const Home = () =>{
     return(
-        <Container fluid className="home h100">
+        <Container fluid className="home h100 justify-content-md-center">
             <Row xs="auto">
                 <Col>
-                    <a  href="/">
+                    <a  href="/presenciales">
                         <ListAltIcon style={{ fontSize: 90, marginLeft: 55 }}></ListAltIcon>
                         <h5>Alumnos Presenciales</h5>
                     </a>
@@ -34,7 +34,7 @@ const Home = () =>{
                         <h5>Nueva Noticia</h5>
                 </Col>
                 <Col>
-                        <BurstModeIcon color="disabled" style={{ fontSize: 90 }}></BurstModeIcon>
+                        <ViewCarouselIcon color="disabled" style={{ fontSize: 90}}></ViewCarouselIcon>
                         <h5>Imagenes</h5>
                 </Col>
             </Row>
