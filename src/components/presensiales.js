@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Container, Button, Row, Col} from 'react-bootstrap';
+import { Table, Container, Row, Col} from 'react-bootstrap';
 
 const Presenciales= () =>{
     return(

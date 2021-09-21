@@ -8,13 +8,14 @@ import Home from './components/home';
 import AsisAlumno from './components/asis-alumno';
 import Pregunta from './components/preguntaAsistencia';
 import Presenciales from './components/presensiales';
-
+import Navegacion from './components/navegacion';
 function App() {
   return (
     <Container fluid className="body-panddin">
       <Router>
         <Switch>
           <Route exact path='/'>
+            <Navegacion></Navegacion>
             <Login></Login>
           </Route>
           <Route path='/home'>
@@ -26,9 +27,11 @@ function App() {
             <Presenciales></Presenciales>
           </Route>
           <Route path='/asistira'>
+              <Navegacion></Navegacion>
               <AsisAlumno></AsisAlumno>
           </Route>
-          <Route path='/asistencia/pregunta'>
+          <Route path='/asistencia/pregunta/:rut'>
+              <Navegacion></Navegacion>
               <Pregunta></Pregunta>
           </Route>
         </Switch>
