@@ -2,6 +2,22 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom'
 import { Form, Container, Button, Row, Col} from 'react-bootstrap';
 
+const enviarAPI = async(e, data)=>{
+        e.preventDefault();
+        const cargaUtil = JSON.stringify(data);
+        const resSql = await fetch(`https://portal.yireliceo.com/guardar_respuesta_alumno.php`,{
+            method: "POST",
+            body: cargaUtil
+        });
+        const exitoso = await resSql.json();
+        console.log(exitoso)
+        if(exitoso){
+            console.log("Guardado");
+        }else{
+            console.log("Error");
+        }
+    }
+
 const Pregunta= () =>{
 
     const [alumno, setAlumno] = useState([]);
@@ -14,7 +30,7 @@ const Pregunta= () =>{
     useEffect(() => {
         const aux = datosAPI(setAlumno)
     },[]);
-    
+
     const [carga, setCarga] = useState({
         rut: rutalumno.rut,
         respuesta:''
@@ -25,14 +41,13 @@ const Pregunta= () =>{
             [e.target.name]: e.target.value
         });
     }
-    
+
     const enviarAPI = async(e)=>{
         e.preventDefault();
         const cargaUtil = JSON.stringify(carga);
-        console.log(cargaUtil)
         const resSql = await fetch(`https://portal.yireliceo.com/guardar_respuesta_alumno.php`,{
             method: "POST",
-            body: cargaUtil,
+            body: cargaUtil
         });
         const exitoso = await resSql.json();
         console.log(exitoso)
@@ -41,7 +56,6 @@ const Pregunta= () =>{
         }else{
             console.log("Error");
         }
-
     }
     return(
         !alumno.respuesta ?
@@ -94,7 +108,7 @@ const Pregunta= () =>{
                                     />
                                 </Col>
                                 <Col xs={8} md={8} >
-                                     <Button className="button btn btn-primary"  >Guardar</Button>
+                                     <Button className="button btn btn-primary" type="submit" onClick={enviarAPI}>Guardar</Button>
                                  </Col>
                                 </Form.Group>
                             </fieldset>
