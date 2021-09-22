@@ -11,15 +11,16 @@ function App() {
   return (
     <Container fluid className="body-panddin">
       <Router>
-      <Header></Header>
         <Switch>
           <Route exact path='/'>
             <Login></Login>
           </Route>
           <Route path='/home'>
+            <Header></Header>
             <Home></Home>
           </Route>
           <Route path='/presenciales'>
+            <Header></Header>
             <Presenciales></Presenciales>
           </Route>
         </Switch>

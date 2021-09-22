@@ -28,7 +28,7 @@ h1{
 
 .div {
   display: flex;
-  text-align: right;
+  text-align: right !important;
   background-color: #152f4f;
   min-height: 3rem;
   align-items: center !important;
@@ -213,6 +213,10 @@ span {
 label{
   color: whitesmoke;
   zoom: 110%;
+}
+
+select{
+  margin-bottom: 1rem;
 }
 .footer .links ul {
   list-style-type: none;

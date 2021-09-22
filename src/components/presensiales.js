@@ -9,9 +9,11 @@ const Presenciales= () =>{
         const data = await fetch(`https://portal.yireliceo.com/obtener_alumno_si.php`)
         const datoalumnos = await data.json();
         setAlumnos(datoalumnos);
+        console.log(alumnos)
     }
     useEffect(() => {
         const aux = datosAPI(setAlumnos)
+        console.log(alumnos)
     },[]);
 
     return(
@@ -67,24 +69,29 @@ const Presenciales= () =>{
                     </select>
                 </Col>
             </Row>
-            <Table striped bordered hover variant="dark">
-                <thead>
-                    <tr>
-                        <th>RUT</th>
-                        <th>Nombre</th>
-                        <th>Curso</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {alumnos.map(e=>(
+            <Row> <Col> </Col></Row>
+            <Row>
+                <Table striped bordered hover variant="dark">
+                    <thead>
                         <tr>
-                            <td key={e.rut} value={e.rut}>{e.rut}</td>
-                            <td>{e.nombre} {e.apellidos}</td>
-                            <td>{e.curso}</td>
+                            <th>RUT</th>
+                            <th>Nombre</th>
+                            <th>Curso</th>
+                            <th>Respuesta</th>
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
+                    </thead>
+                    <tbody>
+                        {alumnos.map(e=>(
+                            <tr>
+                                <td key={e.rut} value={e.rut}>{e.rut}</td>
+                                <td>{e.nombre} {e.apellidos}</td>
+                                <td>{e.curso}</td>
+                                <td>{e.respeusta}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </Row>
         </Container>
     )
 }

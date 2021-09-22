@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import FaceIcon from '@material-ui/icons/Face';
 import DateRangeIcon from '@material-ui/icons/DateRange';
