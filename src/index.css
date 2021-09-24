@@ -217,6 +217,12 @@ label{
 
 select{
   margin-bottom: 1rem;
+  width: 100%;
+}
+
+.boton-filtrar{
+  margin-top: 1rem;
+  margin-bottom: 1rem;;
 }
 .footer .links ul {
   list-style-type: none;

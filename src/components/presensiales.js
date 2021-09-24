@@ -1,55 +1,71 @@
 import React, {useState, useEffect} from 'react';
-import { Table, Container, Row, Col} from 'react-bootstrap';
-
-
+import { Table, Container, Row, Col, Button} from 'react-bootstrap';
+var valor=0;
 const Presenciales= () =>{
 
     const [alumnos, setAlumnos] = useState([]);
-    const datosAPI = async(setAlumnos)=>{
-        const data = await fetch(`https://portal.yireliceo.com/obtener_alumno_si.php`)
+    const alumnoSi = async(setAlumnos)=>{
+        
+        const data = await fetch(`https://portal.yireliceo.com/API/obtener_alumno_curso_si.php?curso=${consulta.curso}`)
         const datoalumnos = await data.json();
         setAlumnos(datoalumnos);
-        console.log(alumnos)
     }
-    useEffect(() => {
-        const aux = datosAPI(setAlumnos)
-        console.log(alumnos)
-    },[]);
-
+    const alumnoCurso = async(setAlumnos)=>{
+        const data = await fetch(`https://portal.yireliceo.com/API/obtener_alumnos_curso.php?consulta=${consulta.curso}`)
+        const datoalumnos = await data.json();
+        setAlumnos(datoalumnos);
+    }
+    const [consulta, setConsulta] =useState({
+        curso:'',
+        mes:''
+    });
+    const handleChange =  e =>{
+        setConsulta({
+            ...consulta,
+            [e.target.name]: e.target.value
+        });
+    }
+    const handleChangeMostrar =  e =>{
+        valor = e.target.value
+        console.log(valor)
+    }
+    const buscarDatos = ()=>{
+        if (valor === "1") {
+            const aux = alumnoCurso(setAlumnos)
+            console.log(alumnos)
+        } else {
+            const aux = alumnoSi(setAlumnos)
+            console.log(alumnos)
+        }
+    }
     return(
         <Container fluid="md" className="justify-content-md-center barra-login">
             <Row className="justify-content-md-center">
                 <Col md="auto"> <h2>Asistencia Presencial a Clase Octubre</h2></Col>
             </Row>
-
             <Row>
-                <Col md="4"> 
+                <Col md="3"> 
                 <h4>Mes</h4>
-                    <select>
-                        <option>Enero</option>
-                        <option>Febrero</option>
-                        <option>Marzo</option>
-                        <option>Abril</option>
-                        <option>Mayo</option>
-                        <option>Junio</option>
-                        <option>Julio</option>
-                        <option>Agosto</option>
-                        <option>Septiembre</option>
-                        <option>Octubre</option>
-                        <option>Noviembre</option>
-                        <option>Diciembre</option>
+                    <select name="mes" onChange={handleChange}>
+                        <option></option>
+                        <option value="1">Enero</option>
+                        <option value="2">Febrero</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Mayo</option>
+                        <option value="6">Junio</option>
+                        <option value="7">Julio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
                     </select>
                 </Col>
-                <Col md="4">
-                    <h4>Años</h4>
-                    <select>
-                        <option>2021</option>
-                        <option>2022</option>
-                    </select>
-                </Col>
-                <Col md="4"> 
+                <Col md="3">
                     <h4>Curso</h4>
-                    <select>
+                    <select name="curso" onChange={handleChange}>
+                        <option></option>
                         <option>PREKINDER</option>
                         <option>KINDER</option>
                         <option>1 BASICO</option>
@@ -67,6 +83,17 @@ const Presenciales= () =>{
                         <option>4 MEDIO A TP</option>
                         <option>4 MEDIO B HC</option>
                     </select>
+                </Col>
+                <Col md="3">
+                    <h4>Mostra</h4>
+                    <select name="mostar" onChange={handleChangeMostrar}>
+                        <option></option>
+                        <option value="1">Todos</option>
+                        <option value="2">Solo si</option>
+                    </select>
+                </Col>
+                <Col md="3"> 
+                    <Button className="boton-filtrar" onClick={buscarDatos}>  Filtrar</Button>
                 </Col>
             </Row>
             <Row> <Col> </Col></Row>
@@ -86,7 +113,7 @@ const Presenciales= () =>{
                                 <td key={e.rut} value={e.rut}>{e.rut}</td>
                                 <td>{e.nombre} {e.apellidos}</td>
                                 <td>{e.curso}</td>
-                                <td>{e.respeusta}</td>
+                                <td>{e.respuesta}</td>
                             </tr>
                         ))}
                     </tbody>
