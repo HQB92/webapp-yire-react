@@ -33,9 +33,30 @@ const Presenciales= () =>{
         if (valor === "1") {
             const aux = alumnoCurso(setAlumnos)
             console.log(alumnos)
-        } else {
+        }
+        if (valor === "1") {
             const aux = alumnoSi(setAlumnos)
             console.log(alumnos)
+        }else{
+            <div
+            aria-live="polite"
+            aria-atomic="true"
+            className="bg-dark position-relative"
+            style={{ minHeight: '240px' }}
+            >
+            <ToastContainer position="top-end" className="p-3">
+                <Toast>
+                <Toast.Header>
+                    <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+                    <strong className="me-auto">Error</strong>
+                    <small className="text-muted">1 Segundo</small>
+                </Toast.Header>
+                <Toast.Body>falta completar respuesta</Toast.Body>
+                </Toast>
+            </ToastContainer>
+            </div>
+        }
+            
         }
     }
     return(

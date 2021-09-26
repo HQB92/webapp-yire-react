@@ -6,6 +6,7 @@ import { Container } from 'react-bootstrap';
 import Header from './components/header';
 import Home from './components/home';
 import Presenciales from './components/presensiales';
+import Navegacion from './components/navegacion';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/'>
+            <Navegacion></Navegacion>
             <Login></Login>
           </Route>
           <Route path='/home'>
