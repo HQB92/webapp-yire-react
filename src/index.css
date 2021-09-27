@@ -4,26 +4,31 @@ body,
 html * {
   font-family: "Roboto", sans-serif;
 }
+
 @import 'bootstrap/dist/css/bootstrap.min.css';
 body {
   background-color: #152f4f;
 }
+
 .body-panddin{
   padding: 0;
 }
+
 .header-p {
   margin: 0px;
   padding: 0px;
   height: 11.3rem;
   background-color: whitesmoke;
 }
+
 h1{
   font-size: 50px;
   font-weight: bold;
 }
+
 .div {
   display: flex;
-  text-align: right;
+  text-align: right !important;
   background-color: #152f4f;
   min-height: 3rem;
   align-items: center !important;
@@ -35,25 +40,41 @@ h1{
   justify-items: left;
   vertical-align: middle;
 }
-.form-control{
-  width: 60%;
+
+.container-fluid{
+  min-height: 70vh;
 }
+
+.centrar-icon-text{
+  justify-items: center;
+
+  display: block !important;
+  align-items: center;
+}
+
 .div a{
   text-decoration: none;
   color: whitesmoke;
   padding-left: 10px;
 }
+
 a{
   text-decoration: none;
   color: whitesmoke;
 }
+
 a:hover{
   font-weight: 500;
   text-shadow: 3px 3px 10px rgba(0, 0, 0,.45); 
   color: #e4b021 !important;
 }
+
 .Col{
   text-align: initial;
+}
+.bloqueo{
+  background-color: rgb(168, 165, 165) !important;
+  border:0;
 }
 .Col, .Col2 a{
   text-decoration: none;
@@ -61,6 +82,7 @@ a:hover{
   text-shadow: none !important;
   box-shadow: none !important;
 }
+
 .Col2{
   text-align: center;
 }
@@ -68,23 +90,37 @@ a:hover{
 .footer {
     background: #152f4f;
     color: whitesmoke;
-    position: fixed;
-    bottom: 0;
+    /*position: fixed;*/
+   
     width: 100%;
-    z-index: 3;
+  
 }
+
+.home a{
+  color: #152f4f ;
+}
+
+.home{
+  background-color: whitesmoke;
+  padding: 30px !important;
+}
+
 .pb-5 {
   padding: 0 !important;
 }
+
 button{
   border: 0 !important;
 }
+
 .navbar-light .navbar-toggler {
   color: rgba(0,0,0,.0);
 }
+
 span{
   color: whitesmoke !important;
 }
+
 .header {
   min-height: 8rem;
   text-align: right;
@@ -92,15 +128,17 @@ span{
   font-family: Roboto;
   font-weight: 400;
   line-height: 24px;
-  background-color: whitesmoke;
-  color: darkgray;
+  background-color: #152f4f ;
+  color: whitesmoke;
   z-index: 10000;
+}
+.btn{
+  min-width: 120px;
 }
 
 .menu2{
   color: rgba(0,0,0,.55);
 }
-
 
 span {
   text-align: center;
@@ -142,9 +180,9 @@ span {
   padding:0;
 }
 .centrar-login{
-  min-height: 400px;
+  min-height: 100%;
   align-items: center !important;
-  max-width: 80% !important;
+  max-width: 100% !important;
   vertical-align: middle;
 
 }
@@ -159,22 +197,63 @@ span {
 }
 .footer {
   color: whitesmoke;
-  position: fixed;
-  bottom: 0;
+  /*position: fixed;
+  bottom: 0;*/
   width: 100%;
   z-index: 3;
 }
 .btn-primary{
-  background-color: #e4b021 ;
-  border-color: #e47f21;
+  background-color: #e4b021 !important;
+  border-color: #e47f21 !important;
 }
 .btn-primary:hover{
-  background-color: #e47f21;
-  border-color: e4b021;
+  background-color: #e47f21 !important;
+  border-color: #e4b021;
 }
 label{
   color: whitesmoke;
   zoom: 110%;
+}
+
+select{
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.table-dark {
+  font-size: 15px;
+  --bs-table-bg:#e47f21 I !important;
+  --bs-table-accent-bg: #e4b021 !important;
+  --bs-table-active-color: #4177ad !important;
+  color:  black;
+  border-color: #152f4f;
+  --bs-table-hover-bg: #e4b021 !important;
+  --bs-table-hover-color: black !important;
+
+}
+.table-striped{
+
+  --bs-table-accent-bg: #e4b021 !important;
+  --bs-table-active-color: #4177ad !important;
+
+  color:  black;
+}
+.table{
+  --bs-table-active-color: #e47f21 !important;
+  --bs-table-active-bg: #e47f21!important;
+ 
+ 
+}
+tr:hover{
+  background-color: brown;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+  --bs-table-accent-bg:#e47f21;
+  --bs-table-hover-bg: #22ac1e !important;
+  color:  black;
+}
+  .boton-filtrar{
+  margin-top: 1rem;
+  margin-bottom: 1rem;;
 }
 .footer .links ul {
   list-style-type: none;
