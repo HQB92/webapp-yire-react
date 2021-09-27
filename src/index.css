@@ -203,12 +203,12 @@ span {
   z-index: 3;
 }
 .btn-primary{
-  background-color: #e4b021 ;
-  border-color: #e47f21;
+  background-color: #e4b021 !important;
+  border-color: #e47f21 !important;
 }
 .btn-primary:hover{
-  background-color: #e47f21;
-  border-color: e4b021;
+  background-color: #e47f21 !important;
+  border-color: #e4b021;
 }
 label{
   color: whitesmoke;
@@ -219,8 +219,39 @@ select{
   margin-bottom: 1rem;
   width: 100%;
 }
+.table-dark {
+  font-size: 15px;
+  --bs-table-bg:#e47f21 I !important;
+  --bs-table-accent-bg: #e4b021 !important;
+  --bs-table-active-color: #4177ad !important;
+  color:  black;
+  border-color: #152f4f;
+  --bs-table-hover-bg: #e4b021 !important;
+  --bs-table-hover-color: black !important;
 
-.boton-filtrar{
+}
+.table-striped{
+
+  --bs-table-accent-bg: #e4b021 !important;
+  --bs-table-active-color: #4177ad !important;
+
+  color:  black;
+}
+.table{
+  --bs-table-active-color: #e47f21 !important;
+  --bs-table-active-bg: #e47f21!important;
+ 
+ 
+}
+tr:hover{
+  background-color: brown;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+  --bs-table-accent-bg:#e47f21;
+  --bs-table-hover-bg: #22ac1e !important;
+  color:  black;
+}
+  .boton-filtrar{
   margin-top: 1rem;
   margin-bottom: 1rem;;
 }

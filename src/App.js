@@ -13,16 +13,16 @@ function App() {
     <Container fluid className="body-panddin">
       <Router>
         <Switch>
-          <Route exact path='/'>
+          {/*<Route exact path='/'>
             <Navegacion></Navegacion>
             <Login></Login>
           </Route>
           <Route path='/home'>
             <Header></Header>
             <Home></Home>
-          </Route>
-          <Route path='/presenciales'>
-            <Header></Header>
+          </Route>*/}
+          <Route path='/'>
+            
             <Presenciales></Presenciales>
           </Route>
         </Switch>

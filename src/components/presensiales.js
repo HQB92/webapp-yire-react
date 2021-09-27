@@ -6,14 +6,17 @@ const Presenciales= () =>{
     const [alumnos, setAlumnos] = useState([]);
     const alumnoSi = async(setAlumnos)=>{
         
-        const data = await fetch(`https://portal.yireliceo.com/API/obtener_alumno_curso_si.php?curso=${consulta.curso}`)
+        const data = await fetch(`https://portal.yireliceo.com/API/obtener_alumnos_curso_si.php?consulta=${consulta.curso}`)
         const datoalumnos = await data.json();
         setAlumnos(datoalumnos);
+        console.log(alumnos)
     }
     const alumnoCurso = async(setAlumnos)=>{
         const data = await fetch(`https://portal.yireliceo.com/API/obtener_alumnos_curso.php?consulta=${consulta.curso}`)
         const datoalumnos = await data.json();
+        
         setAlumnos(datoalumnos);
+        console.log(alumnos)
     }
     const [consulta, setConsulta] =useState({
         curso:'',
@@ -32,31 +35,9 @@ const Presenciales= () =>{
     const buscarDatos = ()=>{
         if (valor === "1") {
             const aux = alumnoCurso(setAlumnos)
-            console.log(alumnos)
         }
-        if (valor === "1") {
+        if (valor === "2") {
             const aux = alumnoSi(setAlumnos)
-            console.log(alumnos)
-        }else{
-            <div
-            aria-live="polite"
-            aria-atomic="true"
-            className="bg-dark position-relative"
-            style={{ minHeight: '240px' }}
-            >
-            <ToastContainer position="top-end" className="p-3">
-                <Toast>
-                <Toast.Header>
-                    <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-                    <strong className="me-auto">Error</strong>
-                    <small className="text-muted">1 Segundo</small>
-                </Toast.Header>
-                <Toast.Body>falta completar respuesta</Toast.Body>
-                </Toast>
-            </ToastContainer>
-            </div>
-        }
-            
         }
     }
     return(
@@ -65,7 +46,7 @@ const Presenciales= () =>{
                 <Col md="auto"> <h2>Asistencia Presencial a Clase Octubre</h2></Col>
             </Row>
             <Row>
-                <Col md="3"> 
+                {/*<Col md="3"> 
                 <h4>Mes</h4>
                     <select name="mes" onChange={handleChange}>
                         <option></option>
@@ -82,8 +63,8 @@ const Presenciales= () =>{
                         <option value="11">Noviembre</option>
                         <option value="12">Diciembre</option>
                     </select>
-                </Col>
-                <Col md="3">
+                </Col>*/}
+                <Col md="4">
                     <h4>Curso</h4>
                     <select name="curso" onChange={handleChange}>
                         <option></option>
@@ -105,7 +86,7 @@ const Presenciales= () =>{
                         <option>4 MEDIO B HC</option>
                     </select>
                 </Col>
-                <Col md="3">
+                <Col md="4">
                     <h4>Mostra</h4>
                     <select name="mostar" onChange={handleChangeMostrar}>
                         <option></option>
@@ -113,7 +94,7 @@ const Presenciales= () =>{
                         <option value="2">Solo si</option>
                     </select>
                 </Col>
-                <Col md="3"> 
+                <Col md="4"> 
                     <Button className="boton-filtrar" onClick={buscarDatos}>  Filtrar</Button>
                 </Col>
             </Row>
