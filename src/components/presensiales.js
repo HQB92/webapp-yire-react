@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { Table, Container, Row, Col, Button} from 'react-bootstrap';
 var valor=0;
 const Presenciales= () =>{
@@ -30,7 +30,6 @@ const Presenciales= () =>{
     }
     const handleChangeMostrar =  e =>{
         valor = e.target.value
-        console.log(valor)
     }
     const buscarDatos = ()=>{
         if (valor === "1") {
@@ -103,6 +102,7 @@ const Presenciales= () =>{
                 <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
+                            <th>N°</th>
                             <th>RUT</th>
                             <th>Nombre</th>
                             <th>Curso</th>
@@ -110,9 +110,10 @@ const Presenciales= () =>{
                         </tr>
                     </thead>
                     <tbody>
-                        {alumnos.map(e=>(
-                            <tr>
-                                <td key={e.rut} value={e.rut}>{e.rut}</td>
+                        {alumnos.map((e,index)=>(
+                            <tr key={e.rut}>
+                                <td >{index+1}</td>
+                                <td value={e.rut}>{e.rut}</td>
                                 <td>{e.nombre} {e.apellidos}</td>
                                 <td>{e.curso}</td>
                                 <td>{e.respuesta}</td>
