@@ -124,6 +124,6 @@ const Presenciales= () =>{
             </Row>
         </Container>
     )
-}
+}   
 
 export default Presenciales;
