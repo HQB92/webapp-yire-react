@@ -86,14 +86,14 @@ const Presenciales= () =>{
                     </select>
                 </Col>
                 <Col md="4">
-                    <h4>Mostra</h4>
+                    <h4>Mostrar</h4>
                     <select name="mostar" onChange={handleChangeMostrar}>
                         <option></option>
                         <option value="1">Todos</option>
                         <option value="2">Solo si</option>
                     </select>
                 </Col>
-                <Col md="4"> 
+                <Col md="4">
                     <Button className="boton-filtrar" onClick={buscarDatos}>  Filtrar</Button>
                 </Col>
             </Row>
