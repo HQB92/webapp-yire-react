@@ -5,13 +5,14 @@ const Presenciales= () =>{
 
     const [alumnos, setAlumnos] = useState([]);
     const alumnoSi = async(setAlumnos)=>{
-        
+        setAlumnos([]);
         const data = await fetch(`https://portal.yireliceo.com/API/obtener_alumnos_curso_si.php?consulta=${consulta.curso}`)
         const datoalumnos = await data.json();
         setAlumnos(datoalumnos);
         console.log(alumnos)
     }
     const alumnoCurso = async(setAlumnos)=>{
+        setAlumnos([]);
         const data = await fetch(`https://portal.yireliceo.com/API/obtener_alumnos_curso.php?consulta=${consulta.curso}`)
         const datoalumnos = await data.json();
         
@@ -45,7 +46,7 @@ const Presenciales= () =>{
                 <Col md="auto"> <h2>Asistencia Presencial a Clase Octubre</h2></Col>
             </Row>
             <Row>
-                {/*<Col md="3"> 
+                {/*<Col md="3">
                 <h4>Mes</h4>
                     <select name="mes" onChange={handleChange}>
                         <option></option>
@@ -124,6 +125,6 @@ const Presenciales= () =>{
             </Row>
         </Container>
     )
-}   
+}
 
 export default Presenciales;
