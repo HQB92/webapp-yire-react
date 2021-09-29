@@ -106,7 +106,6 @@ const Presenciales= () =>{
                             <th>N°</th>
                             <th>RUT</th>
                             <th>Nombre</th>
-                            <th>Curso</th>
                             <th>Respuesta</th>
                         </tr>
                     </thead>
@@ -116,7 +115,6 @@ const Presenciales= () =>{
                                 <td >{index+1}</td>
                                 <td value={e.rut}>{e.rut}</td>
                                 <td>{e.nombre} {e.apellidos}</td>
-                                <td>{e.curso}</td>
                                 <td>{e.respuesta}</td>
                             </tr>
                         ))}
