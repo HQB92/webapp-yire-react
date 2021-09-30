@@ -22,7 +22,7 @@ function App() {
             <Home></Home>
           </Route>*/}
           <Route path='/'>
-            
+            <Header></Header>
             <Presenciales></Presenciales>
           </Route>
         </Switch>

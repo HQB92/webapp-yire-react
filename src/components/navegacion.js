@@ -5,15 +5,15 @@ const Navegacion= () =>{
     return(
         <div>
             <Navbar  collapseOnSelect expand="lg" >
-            <Container className="header fluid">
-            <Navbar.Brand href="/" >
-              <img
-                alt=""
-                src={Logo}
-                width="130px"
-                height="130px" />
-            </Navbar.Brand>
-            <h4>Corporación Educacional YIRE</h4>
+                <Container className="header fluid">
+                    <Navbar.Brand href="/" >
+                    <img
+                        alt=""
+                        src={Logo}
+                        width="130px"
+                        height="130px" />
+                    </Navbar.Brand>
+                    <h4>Corporación Educacional YIRE</h4>
             </Container>
             </Navbar>
         </div>

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Table, Container, Row, Col, Button} from 'react-bootstrap';
+import { CSVLink } from "react-csv";
 
 const Presenciales= () =>{
     const [consulta, setConsulta] =useState({
@@ -120,6 +121,7 @@ const Presenciales= () =>{
                     </tbody>
                 </Table>
             </Row>
+            <CSVLink data={alumnos} filename={"alumnos.csv"}> <Button>Exportar a CSV</Button> </CSVLink>
         </Container>
         :
         <Container fluid="md" className="justify-content-md-center barra-login">
