@@ -8,21 +8,22 @@ import Home from './components/home';
 import Presenciales from './components/presensiales';
 import Navegacion from './components/navegacion';
 
+
 function App() {
   return (
     <Container fluid className="body-panddin">
       <Router>
         <Switch>
-          {/*<Route exact path='/'>
+          <Route exact path='/'>
             <Navegacion></Navegacion>
             <Login></Login>
           </Route>
           <Route path='/home'>
             <Header></Header>
             <Home></Home>
-          </Route>*/}
-          <Route path='/'>
-            <Header></Header>
+          </Route>
+          <Route path='/presenciales'>
+            
             <Presenciales></Presenciales>
           </Route>
         </Switch>

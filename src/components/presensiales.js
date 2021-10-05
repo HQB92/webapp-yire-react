@@ -121,7 +121,7 @@ const Presenciales= () =>{
                     </tbody>
                 </Table>
             </Row>
-            <CSVLink data={alumnos} filename={"alumnos.csv"}> <Button>Exportar a CSV</Button> </CSVLink>
+            <CSVLink data={alumnos} filename={consulta.curso+"_"+consulta.mes+".csv"}> <Button>Exportar a CSV</Button> </CSVLink>
         </Container>
         :
         <Container fluid="md" className="justify-content-md-center barra-login">
