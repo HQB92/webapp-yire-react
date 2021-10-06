@@ -47,7 +47,7 @@ const Presenciales= () =>{
     }
     return(
         mesBBDD.mes === consulta.mes?
-        <Container fluid="md" className="justify-content-md-center barra-login">
+        <Container fluid className="home h100 justify-content-md-center">
             <Row className="justify-content-md-center">
                 <Col md="auto"> <h2>Asistencia Presencial a Clase Octubre</h2></Col>
             </Row>

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Form, Container, Button, Row, Col} from 'react-bootstrap';
 import axios from 'axios';
-import  jwt from 'jwt-decode';
+
 
 const Login= () =>{
 
@@ -20,20 +20,16 @@ const Login= () =>{
         const LOGIN_ENDPOINT = `https://portal.yireliceo.com/API/login2.php`;
         try {
             let response = await axios.post(LOGIN_ENDPOINT, usuario);
-            const token = jwt(response.data.jwt);
             var  today = new Date();
                 const hor=today.getHours()+1;
                 const min=today.getMinutes();
-                const seg =today.getSeconds()
             if(response.status === 200 && response.data.jwt){
-                let jwt = token.data;
-                let expire_at = token.iat;
-                localStorage.setItem("data_token", JSON.stringify(token));
-                localStorage.setItem("expire_at", hor+""+min+""+seg);
-                console.log(jwt);
-                console.log(expire_at);
+                let jwt = response.data.jwt;
+                localStorage.setItem("data_token", JSON.stringify(jwt));
+                localStorage.setItem("expire_at", hor+""+min);
+                window.location = '/home';
             }
-
+            
         } catch(e){
             console.log(e);
         }
@@ -50,19 +46,16 @@ const Login= () =>{
                     <Form onSubmit={login}>
                         <Form.Group className="mb-4" >
                             <Form.Label>Correo electronico</Form.Label>
-                            <Form.Control name="correo" type="email" placeholder="Ingres su Correo..." />
+                            <Form.Control name="email" type="email" placeholder="Ingres su Correo..." onChange={handleLogin}/>
                         </Form.Group>
                         <Form.Group className="mb-5" >
                             <Form.Label>Contraseña</Form.Label>
-                            <Form.Control name="clave" type="password" placeholder="Contraseña..."  />
+                            <Form.Control name="password" type="password" placeholder="Contraseña..." onChange={handleLogin}  />
                         </Form.Group>
                         <Button  variant="primary" type="submit">
                             Iniciar Sesión
                         </Button>
                     </Form>
-                    <div className="card-footer">
-                        <span>¿Olvido su contraseña?</span> <a href="/home"> Recuperar</a>
-                    </div>
                 </Col>
                 <Col xs={2} md={3}></Col>
             </Row>

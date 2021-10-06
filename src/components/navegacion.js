@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo  from '../img/header-footer/logo-yire.png';
 import { Navbar, Container} from 'react-bootstrap';
+
 const Navegacion= () =>{
     return(
         <div>
