@@ -20,7 +20,11 @@ body {
   height: 11.3rem;
   background-color: whitesmoke;
 }
-
+@media (max-width: 400px) {
+  .home {
+    padding:0 !important;
+  }
+}
 h1{
   font-size: 50px;
   font-weight: bold;
@@ -42,7 +46,7 @@ h1{
 }
 
 .container-fluid{
-  min-height: 70vh;
+  min-height: 79vh;
 }
 
 .centrar-icon-text{
@@ -51,7 +55,10 @@ h1{
   display: block !important;
   align-items: center;
 }
-
+.home h3{
+  color: black;
+  
+}
 .div a{
   text-decoration: none;
   color: whitesmoke;
@@ -91,9 +98,8 @@ a:hover{
     background: #152f4f;
     color: whitesmoke;
     /*position: fixed;*/
-   
+
     width: 100%;
-  
 }
 
 .home a{
@@ -102,10 +108,22 @@ a:hover{
 
 .home{
   background-color: whitesmoke;
-  padding: 30px !important;
+  padding: 20px !important;
+  display: block;
+  text-align: center;
 }
 
-.pb-5 {
+.dropdown-divider{
+  height: 1px ;
+  width: 100%;
+  border: 1px solid whitesmoke;
+}
+
+hr{
+  opacity: .8;
+}
+
+.pb-5{
   padding: 0 !important;
 }
 
@@ -190,6 +208,11 @@ span {
   max-width: 100% !important;
   vertical-align: middle;
 
+}
+.icon-tam{
+  width: 199px;
+  display: block;
+  text-align: center;
 }
 
 .barra-login{
