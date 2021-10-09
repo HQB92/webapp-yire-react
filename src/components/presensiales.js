@@ -35,14 +35,15 @@ const Presenciales= () =>{
     }
     useEffect(() => {
         buscarDatos()
+        // eslint-disable-next-line
     }, [consulta]);
 
     const buscarDatos = ()=>{
         if (consulta.mostar === "1") {
-            const aux = alumnoCurso(setAlumnos)
+            alumnoCurso(setAlumnos)
         }
         if (consulta.mostar === "2") {
-            const aux = alumnoSi(setAlumnos)
+            alumnoSi(setAlumnos)
         }
     }
     return(

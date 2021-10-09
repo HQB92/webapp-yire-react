@@ -3,7 +3,7 @@ import { Form, Container, Button, Row, Col} from 'react-bootstrap';
 import  jwt from 'jwt-decode';
 
 const Dispositivos = () => {
-    const [user, setUser]=useState({
+    const [, setUser]=useState({
         id:'',
         firstname:'',
         lastname:'',
@@ -25,6 +25,7 @@ const Dispositivos = () => {
             localStorage.removeItem("expire_at");
             window.location = './';
         }
+        // eslint-disable-next-line
     },[]);
     const [pass, setPass]=useState({
         pass:'',
@@ -36,11 +37,8 @@ const Dispositivos = () => {
             [e.target.name]: e.target.value
         });
     }
-    const [data, setData]=useState({
-        id: '',
-        pass:''
-    });
-    const enviarAPI = async (e) => {
+
+    /*const enviarAPI = async (e) => {
         e.preventDefault();
         if (pass.pass === pass.confirm) {
             data.pass=pass.pass
@@ -57,7 +55,7 @@ const Dispositivos = () => {
             }else{
                 console.log("error");
             }
-    }
+    }*/
 
     return (
         <Container fluid className="home h100 justify-content-md-center">

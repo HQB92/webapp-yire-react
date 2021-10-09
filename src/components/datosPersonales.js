@@ -26,6 +26,7 @@ const DatosPersonales = () => {
             localStorage.removeItem("expire_at");
             window.location = './';
         }
+        // eslint-disable-next-line
     },[]);
     const [pass, setPass]=useState({
         pass:'',
@@ -37,7 +38,7 @@ const DatosPersonales = () => {
             [e.target.name]: e.target.value
         });
     }
-    const [data, setData]=useState({
+    const [data,]=useState({
         id: '',
         pass:''
     });

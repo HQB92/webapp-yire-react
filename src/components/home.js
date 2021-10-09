@@ -40,6 +40,7 @@ const Home = () =>{
             localStorage.removeItem("expire_at");
             window.location = './';
         }
+        // eslint-disable-next-line
     },[]);
     useEffect(() => {
         if(user.tipo_user === "Administrador"){

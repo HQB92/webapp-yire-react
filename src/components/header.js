@@ -33,6 +33,7 @@ const Header = () =>{
         }else{
             window.location = './';
         }
+        // eslint-disable-next-line
     }, []);
     const logout = () => {
         localStorage.removeItem("data_token");
