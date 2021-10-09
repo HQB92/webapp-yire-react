@@ -36,13 +36,11 @@ const Login= () =>{
     }
 
     return(
-        <Container fluid="md" className="justify-content-md-center barra-login">
-            <Row className="justify-content-md-center barra-login">
-                <Col md="auto"> <h1>Iniciar Sesión</h1></Col>
-            </Row>
-            <Row >
-                <Col xs={2} md={3}></Col>
-                  <Col xs={8} md={6} >
+        <Container fluid className="login h100 justify-content-md-center">
+                <Col><h1>Iniciar Sesión</h1></Col>
+            <Row  xl={3}  lg={2} md={1}   className="justify-content-center">
+                  <Col >
+                    
                     <Form onSubmit={login}>
                         <Form.Group className="mb-4" >
                             <Form.Label>Correo electronico</Form.Label>
@@ -57,7 +55,6 @@ const Login= () =>{
                         </Button>
                     </Form>
                 </Col>
-                <Col xs={2} md={3}></Col>
             </Row>
         </Container>
     )

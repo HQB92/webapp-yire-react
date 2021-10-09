@@ -1,9 +1,10 @@
 import React from "react"
-
+import {  Container} from 'react-bootstrap';
 const Footer = () => {
     return(
+        <Container>
         <div className="mt-5 pt-5 pb-5 footer">
-            <div className="container">
+            <div className="container" fixed="bottom">
                 <div className="row">
                     <div className=" copyright logo">
                     <p className="">
@@ -15,6 +16,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
+        </Container>
     )
 }
 export default Footer;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Container, Button, Row, Col, Alert} from 'react-bootstrap';
+import { Form, Container, Button, Row, Col} from 'react-bootstrap';
 import  jwt from 'jwt-decode';
 
 const Dispositivos = () => {
