@@ -49,7 +49,7 @@ const Presenciales= () =>{
         mesBBDD.mes === consulta.mes?
         <Container fluid className="home h100 justify-content-md-center">
             <Row className="justify-content-md-center">
-                <Col md="auto"> <h2>Asistencia Presencial a Clase Octubre</h2></Col>
+                <Col md="auto"> <h2>Asistencia Presencial a Clases</h2></Col>
             </Row>
             <Row className="text-center">
                 <Col md="4" className="text-center">
@@ -124,7 +124,7 @@ const Presenciales= () =>{
             <CSVLink data={alumnos} filename={consulta.curso+"_"+consulta.mes+".csv"}> <Button>Exportar a CSV</Button> </CSVLink>
         </Container>
         :
-        <Container fluid="md" className="justify-content-md-center barra-login">
+        <Container fluid className=" home  h100 justify-content-md-center">
             <Row className="justify-content-md-center">
                 <Col md="auto"> <h2>Asistencia Presencial a Clase Octubre</h2></Col>
             </Row>

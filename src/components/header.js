@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 import { Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import MenuIcon from '@material-ui/icons/Menu';
 import  jwt from 'jwt-decode';
@@ -30,8 +31,7 @@ const Header = () =>{
         if(time <= token_exp ){
             setUser(desencrip.data);
         }else{
-            logout();
-            window.location = '/';
+            window.location = './';
         }
     }, []);
     const logout = () => {
@@ -39,27 +39,23 @@ const Header = () =>{
         localStorage.removeItem("expire_at");
     }
     return(
-        <div>
-            <Navbar className="div " collapseOnSelect expand="lg">
-                <Container className="">
-                   
-                {user.tipo_user === 'Administrador' ? <SupervisorAccountIcon style={{ fontSize: 60},{marginRight:10}}></SupervisorAccountIcon>  : <LocalLibraryIcon style={{ fontSize: 60},{marginRight:10}}></LocalLibraryIcon>}  {user.firstname}
-                        
+        <Container className="header"  >
+            <Navbar className="div " collapseOnSelect expand="lg" fixed="top" >
+            <div>{user.tipo_user === 'Administrador' ? <SupervisorAccountIcon style={{ fontSize: 40,marginRight:10}}></SupervisorAccountIcon>  : <LocalLibraryIcon style={{ fontSize: 60,marginRight:10}}></LocalLibraryIcon>}  {user.firstname}</div>
                     <Navbar.Toggle aria-controls="navbar-borde responsive-navbar-nav ">
                         <span><MenuIcon style={{ fontSize: 40 }}></MenuIcon></span>
                     </Navbar.Toggle>
                 <Navbar.Collapse id="responsive-navbar-nav navbar-right navbar-borde " >
                     <Nav className="me-auto navbar-borde"></Nav>
                     <Nav className="navbar-right div navbar-borde ">
-                        <Nav.Link className="navbar-right div" href="/home"><HomeIcon style={{ fontSize: 20},{marginRight:7}}></HomeIcon>Inicio</Nav.Link>
+                        <Link className="navbar-right div" to="/home"><HomeIcon style={{ fontSize: 20,marginRight:7}}></HomeIcon>Inicio</Link>
                         <NavDropdown.Divider />
-                        <Nav.Link className="navbar-right div" href="/cambiar_pass"><VpnKeyIcon style={{ fontSize: 20},{marginRight:7}}></VpnKeyIcon>Contraseña </Nav.Link>
-                        <Nav.Link className="navbar-right div" onClick={logout} href="/"><PowerSettingsNewIcon style={{ fontSize: 20},{marginRight:7}}></PowerSettingsNewIcon>cerrar</Nav.Link>
+                        <Link className="navbar-right div" to="/cambiar_pass"><VpnKeyIcon style={{ fontSize: 20,marginRight:7}}></VpnKeyIcon>Contraseña </Link>
+                        <Link className="navbar-right div" onClick={logout} to="/"><PowerSettingsNewIcon style={{ fontSize: 20,marginRight:7}}></PowerSettingsNewIcon>cerrar</Link>
                     </Nav>
                 </Navbar.Collapse>
-                </Container>
             </Navbar>
-        </div>
+        </Container>
     )
 }
 

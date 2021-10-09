@@ -11,45 +11,33 @@ import DatosPersonales from './components/datosPersonales';
 import Dispositivos from './components/dispositivos';
 
 function App() {
-  var token = localStorage.getItem('data_token')
-  if (token === null ){
-      return(
-      <Container fluid className="body-panddin">
+    var token = localStorage.getItem('data_token')
+  return (
+    <Container fluid className="body-panddin">
+      
       <Router>
+      {token !== null ?<Header></Header>:<Navegacion></Navegacion>}
         <Switch>
           <Route exact path='/'>
-            <Navegacion></Navegacion>
-            <Login></Login>
+            {token === null?<Login></Login>:<Home></Home>}
+          </Route>
+          <Route path='/home'>
+            <Home></Home>
+          </Route>
+          <Route path='/presenciales'>
+            <Presenciales></Presenciales>
+          </Route>
+          <Route path='/cambiar_pass'>
+            <DatosPersonales></DatosPersonales>
+          </Route>
+          <Route path='/dispositivos'>
+            <Dispositivos></Dispositivos>
           </Route>
         </Switch>
-        <Footer></Footer>
       </Router>
+      <Footer></Footer>
     </Container>
-      )
-  }else{
-    return (
-      <Container fluid className="body-panddin">
-        <Router>
-        <Header></Header>
-          <Switch>
-            <Route path='/home'>
-              <Home></Home>
-            </Route>
-            <Route path='/presenciales'>
-              <Presenciales></Presenciales>
-            </Route>
-            <Route path='/cambiar_pass'>
-              <DatosPersonales></DatosPersonales>
-            </Route>
-            <Route path='/dispositivos'>
-              <Dispositivos></Dispositivos>
-            </Route>
-          </Switch>
-          <Footer></Footer>
-        </Router>
-      </Container>
-    );
-  }
+  );
 }
 
 export default App;

@@ -1,23 +1,21 @@
 import React from 'react';
 import Logo  from '../img/header-footer/logo-yire.png';
-import { Navbar, Container} from 'react-bootstrap';
+import {Navbar, Container} from 'react-bootstrap';
 
 const Navegacion= () =>{
     return(
-        <div>
-            <Navbar  collapseOnSelect expand="lg" >
-                <Container className="header fluid">
+        <Container className="header">
+            <Navbar  className="div " collapseOnSelect expand="lg" fixed="top" >
                     <Navbar.Brand href="/" >
                     <img
                         alt=""
                         src={Logo}
-                        width="130px"
-                        height="130px" />
+                        width="100px"
+                        height="100px" />
                     </Navbar.Brand>
-                    <h4>Corporación Educacional YIRE</h4>
-            </Container>
+                            <p>Corporación Educacional YIRE</p>
             </Navbar>
-        </div>
+        </Container>
     )
 }
 
