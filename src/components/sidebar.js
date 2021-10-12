@@ -1,8 +1,7 @@
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import SideNav, {NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import {Link, useHistory} from 'react-router-dom';
-import React, { useEffect,useState }  from 'react';
-import { Container, Row, Col, Accordion } from 'react-bootstrap';
+import {useHistory} from 'react-router-dom';
+import React  from 'react';
 import SettingsInputHdmiIcon from '@material-ui/icons/SettingsInputHdmi';
 import WebIcon from '@material-ui/icons//Web';
 import DesktopMacIcon from '@material-ui/icons/DesktopMac';

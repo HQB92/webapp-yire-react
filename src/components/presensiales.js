@@ -9,8 +9,7 @@ const Presenciales= () =>{
         mostar:'1',
     });
     
-    const [mesBBDD, setMesBBDD] = useState([]);
-    const [index, setIndex]=useState(1)
+    const [ , setMesBBDD] = useState([]);
     const [alumnos, setAlumnos] = useState([]);
     const alumnoCurso = async(setAlumnos)=>{
         setAlumnos([]);
@@ -37,7 +36,7 @@ const Presenciales= () =>{
     }
     useEffect(() => {
         buscarDatos()
-        
+        // eslint-disable-next-line
     }, [consulta]);
 
     const buscarDatos = ()=>{

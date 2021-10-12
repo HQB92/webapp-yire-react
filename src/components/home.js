@@ -1,13 +1,5 @@
 import React, { useEffect,useState }  from 'react';
-import {Link} from 'react-router-dom';
-import { Container, Row, Col, Accordion } from 'react-bootstrap';
-import SettingsInputHdmiIcon from '@material-ui/icons/SettingsInputHdmi';
-import WebIcon from '@material-ui/icons//Web';
-import DesktopMacIcon from '@material-ui/icons/DesktopMac';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
-import PersonIcon from '@material-ui/icons/Person';
-import SettingsIcon from '@material-ui/icons/Settings';
+import { Container, Col } from 'react-bootstrap';
 import  jwt from 'jwt-decode';
 
 const Home = () =>{
@@ -18,7 +10,7 @@ const Home = () =>{
         email:'',
         tipo_user:''
     });
-    const [perfil, SetPerfil]=useState(false)
+    const [ , SetPerfil]=useState(false)
     var token = localStorage.getItem('data_token')
     if (token === null ){
         window.location = './';
