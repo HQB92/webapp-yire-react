@@ -1,7 +1,8 @@
+import React, {useState, useEffect} from 'react';
+
 import SideNav, {NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import {useHistory} from 'react-router-dom';
-import React  from 'react';
 import SettingsInputHdmiIcon from '@material-ui/icons/SettingsInputHdmi';
 import WebIcon from '@material-ui/icons//Web';
 import DesktopMacIcon from '@material-ui/icons/DesktopMac';
@@ -10,12 +11,50 @@ import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import PersonIcon from '@material-ui/icons/Person';
 import SettingsIcon from '@material-ui/icons/Settings';
 import HomeIcon from '@material-ui/icons/Home';
+import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
+import  jwt from 'jwt-decode';
 const Sidebar = () =>{
     const history = useHistory();
+    const logout = () => {
+        localStorage.removeItem("data_token");
+        localStorage.removeItem("expire_at");
+    }
+    const [ , setUser]=useState({
+        id:'',
+        firstname:'',
+        lastname:'',
+        email:'',
+        tipo_user:''
+    });
+        var token = localStorage.getItem('data_token')
+        if (token === null ){
+            window.location = './';
+        }
+        var token_exp = parseInt(localStorage.getItem('expire_at'));
+        const desencrip = jwt(JSON.parse(token));
+        var  today = new Date();
+        const hor=today.getHours();
+        const min=today.getMinutes();
+        const time=hor+""+min;
+        let to;
+    useEffect(() => {
+        if(time <= token_exp ){
+            setUser(desencrip.data);
+        }else{
+            window.location = './';
+        }
+        // eslint-disable-next-line
+    }, []);
     return(
         <SideNav onSelect={selected => {
-            const to = '/' + selected;
-                     history.push(to);
+            to = '/' + selected;
+            if(to === "/cerrar"){
+                logout();
+                window.location = './';
+            }else{
+                history.push(to);
+            }
+
           }}>
             <SideNav.Toggle />
             <SideNav.Nav defaultSelected="home">
@@ -132,17 +171,24 @@ const Sidebar = () =>{
                 </NavItem>
                 <NavItem eventKey="configuraciones">
                     <NavIcon>
-                    <SettingsIcon style={{ fontSize: 35}}></SettingsIcon>
+                        <SettingsIcon style={{ fontSize: 35}}></SettingsIcon>
                     </NavIcon>
                     <NavText>Configuraciones</NavText>
                     <NavItem eventKey="configuraciones/editar">
                         <NavText>Editar Mis Datos</NavText>
                     </NavItem>
-                    <NavItem eventKey="configuraciones/pass">
+                    <NavItem eventKey="cambiar_pass">
                         <NavText>Cambiar Contraseña</NavText>
                     </NavItem>
                 </NavItem>
+                <NavItem className="cerrar" eventKey="cerrar" onClick={logout} >
+                    <NavIcon>
+                        <PowerSettingsNewIcon style={{ fontSize: 35}}></PowerSettingsNewIcon>
+                    </NavIcon>
+                    <NavText>Cerrra Sesión</NavText>
+                </NavItem>
             </SideNav.Nav>
+            
         </SideNav>
     )
 }
