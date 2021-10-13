@@ -6,11 +6,12 @@ const Home = () =>{
     return(
         <Container fluid className="home h100 justify-content-md-center">
         <Col ><h1>Portal Intitucional YIRE</h1></Col>
-        <Col><img
+        <Col>
+            <img
+                className="img-fluid"
                 alt=""
                 src={Logo}
-                width="39%"
-                height="39%"/>
+                width="690px"/>
         </Col>
         </Container>
     )
