@@ -17,7 +17,7 @@ const Login= () =>{
     }
     const login = async (e) => {
         e.preventDefault();
-        const LOGIN_ENDPOINT = `https://portal.yireliceo.com/API/login2.php`;
+        const LOGIN_ENDPOINT = `https://portal.yireliceo.com/API/login.php`;
         try {
             let response = await axios.post(LOGIN_ENDPOINT, usuario);
             var  today = new Date();
