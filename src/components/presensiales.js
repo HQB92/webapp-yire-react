@@ -108,7 +108,6 @@ const Presenciales= () =>{
                             <th>RUT</th>
                             <th>Nombre</th>
                             <th>Respuesta</th>
-                            <th>Mes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -118,7 +117,6 @@ const Presenciales= () =>{
                                 <td value={e.rut}>{e.rut}</td>
                                 <td>{e.nombre} {e.apellidos}</td>
                                 <td>{e.respuesta}</td>
-                                <td>{e.mes}</td>
                             </tr> 
                         :""))}
                     </tbody>

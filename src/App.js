@@ -19,7 +19,7 @@ function App() {
       {token !== null ?(<Sidebar></Sidebar>):''}
         <Switch>
           <Route exact path='/'>
-            {token === null?<Login></Login>:'/home'}
+            {token === null?<Login></Login>:<Home></Home>}
           </Route>
           <Route path='/home'>
             <Home></Home>
