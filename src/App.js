@@ -9,14 +9,14 @@ import Presenciales from './components/presensiales';
 import Navegacion from './components/navegacion';
 import DatosPersonales from './components/datosPersonales';
 import Dispositivos from './components/dispositivos';
-
+import Sidebar from './components/sidebar';
 function App() {
     var token = localStorage.getItem('data_token')
   return (
     <Container fluid className="body-panddin">
-      
       <Router>
-      {token !== null ?<Header></Header>:<Navegacion></Navegacion>}
+      {token !== null ?(<Header></Header>):<Navegacion></Navegacion>}
+      {token !== null ?(<Sidebar></Sidebar>):''}
         <Switch>
           <Route exact path='/'>
             {token === null?<Login></Login>:<Home></Home>}
@@ -24,7 +24,7 @@ function App() {
           <Route path='/home'>
             <Home></Home>
           </Route>
-          <Route path='/presenciales'>
+          <Route path='/alumno/listar_presenciales'>
             <Presenciales></Presenciales>
           </Route>
           <Route path='/cambiar_pass'>

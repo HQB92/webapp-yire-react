@@ -12,13 +12,13 @@ body {
 
 .body-panddin{
   padding: 0;
+  background-color: whitesmoke;
+  width: 100vW;
+  height: 100vh;
 }
-
-
-@media (max-width: 400px) {
-  .home {
-    padding:0 !important;
-  }
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- {
+   clear: both; 
+   position: relative; 
 }
 h1{
   font-size: 50px;
@@ -27,25 +27,37 @@ h1{
 h1{
   color: #152f4f;
 }
+.divleft{
+  margin-top: 15px;
+  display: flex !important;
+}
 .div {
-  padding: 0.5rem;
+  height: 7vh;
+ 
+  float: left;
   display: flex;
   text-align: right !important;
   background-color: #152f4f;
   align-items: center !important;
-  /*padding: 0 3px;*/
-  font-weight: bold;
-  font-size: 14px;
-  text-transform: uppercase;
+  font-size: 12px;
   color: rgb(255, 255, 255) !important;
   justify-items: left;
   vertical-align: middle;
+  align-items: flex-start;
 }
-
+.datos{
+  display: block !important;
+  position: relative;
+  text-align: left;
+  float: left;
+  margin-left: 15px;
+}
 .container-fluid{
   min-height: 83vh;
 }
-
+.container{
+  background-color: #152f4f !important;
+}
 .centrar-icon-text{
   justify-items: center;
   display: block !important;
@@ -184,9 +196,9 @@ text{
   display: block;
 }
 .header {
-  display: block;
+  display: flex;
   text-align: center;
-  width: 100%;
+  width: 100vw;
   text-align: right;
   font-size: 12px;
   font-family: Roboto;
@@ -197,6 +209,8 @@ text{
   background-color: #152f4f ;
   color: whitesmoke;
   z-index: 10000;
+
+
 }
 
 .accordion-button:focus {
@@ -206,6 +220,12 @@ text{
    box-shadow: none; 
 }
 .accordion-button:hover{
+  color: #e47f21 !important;
+}
+svg:hover{
+  color: #e47f21 !important;
+}
+.sidenav---sidenav-navitem---uwIJ- .sidenav---expandable---3_dr7:hover{
   color: #e47f21 !important;
 }
 .btn{
@@ -267,6 +287,20 @@ span {
   vertical-align: middle;
 
 }
+
+.sidenav---sidenav---_2tBP {
+  position: absolute;
+  height: 87vh !important;
+  top: 6.9vh !important;
+  bottom: 0;
+  left: 0;
+  z-index: 1006;
+  min-width: 70px;
+  background: #152f4f !important;
+  transition: min-width 0.2s;
+  height: 83vh;
+}
+
 .icon-tam{
   width: 199px;
   display: block;
@@ -295,7 +329,11 @@ label{
 *:focus {
   outline: 0 !important;
 }
-
+.cerrar{
+  display: block !important;
+  position: absolute !important;
+  bottom: 0;
+}
 .barra-login{
   text-align: center;
   align-items: center;
@@ -313,14 +351,22 @@ label{
     left: 0;
     z-index: 1030;
 }
+.sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47.sidenav---selected---1EK3y > .sidenav---navitem---9uL5T {
+  color: #e47f21;
+}
 .home{
-  margin-top: 72px;
+  margin-top: 80px;
+  position: absolute;
+  right: 0;
+  padding-left:  calc(7vw + 64px);
+  padding-right: 7vw;
+  width:100vw;
   background-color: whitesmoke;
-  padding: 15px !important;
   display: block;
   text-align: center;
-  padding-bottom: 3rem;
-  margin-bottom: 5rem;
+  padding-bottom: 2rem;
+  max-height: 86vh;
+  overflow-y: scroll;
 }
 .login{
   min-height: 82vh;

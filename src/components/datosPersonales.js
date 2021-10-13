@@ -26,6 +26,7 @@ const DatosPersonales = () => {
             localStorage.removeItem("expire_at");
             window.location = './';
         }
+        // eslint-disable-next-line
     },[]);
     const [pass, setPass]=useState({
         pass:'',
@@ -37,7 +38,7 @@ const DatosPersonales = () => {
             [e.target.name]: e.target.value
         });
     }
-    const [data, setData]=useState({
+    const [data,]=useState({
         id: '',
         pass:''
     });
@@ -50,7 +51,7 @@ const DatosPersonales = () => {
             console.log(pass.pass)
             console.log(data)
             const cargaUtil = JSON.stringify(data);
-            const resSql = await fetch(`https://portal.yireliceo.com/API/actualizar_pass.php`, {
+            const resSql = await fetch(`https://portal.yireliceo.com/API/usuario/actualizar_pass.php`, {
                 method: "POST",
                 body: cargaUtil
             });
