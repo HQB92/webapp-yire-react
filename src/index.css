@@ -223,8 +223,27 @@ text{
   background-color: #152f4f ;
   color: whitesmoke;
   z-index: 10000;
+}
+.header_login{
+  
+  float: left;
+  display: flex;
+  text-align: right !important;
+  background-color: #152f4f;
+  align-items: center !important;
+  font-size: 12px;
+  color: rgb(255, 255, 255) !important;
+  justify-items: left;
+  vertical-align: middle;
+  align-items: flex-start;
 
+}
 
+@media (min-width: 992px){
+  .navbar-expand-lg {
+      flex-wrap: nowrap;
+      justify-content: center;
+  }
 }
 
 .accordion-button:focus {
@@ -390,11 +409,10 @@ label{
   overflow-y: scroll;
 }
 .login{
-  min-height: 82vh;
-  margin-top: 120px;
+  
+  margin-top: 140px;
   background-color: whitesmoke;
-  padding: 20px !important;
-  display: block;
+ 
   text-align: center;
 }
 .btn-primary{
