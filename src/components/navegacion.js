@@ -4,8 +4,8 @@ import {Navbar, Container} from 'react-bootstrap';
 
 const Navegacion= () =>{
     return(
-        <Container className="header">
-            <Navbar  className="div " collapseOnSelect expand="lg" fixed="top" >
+        <Container className="header_login">
+            <Navbar  className="header_login" collapseOnSelect expand="lg" fixed="top" >
                     <Navbar.Brand href="/" >
                     <img
                         alt=""
