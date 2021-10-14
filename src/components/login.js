@@ -36,7 +36,7 @@ const Login= () =>{
     }
 
     return(
-        <Container fluid className="login h100 justify-content-md-center">
+        <Container fluid className="login justify-content-md-center">
                 <Col><h1>Iniciar Sesión</h1></Col>
             <Row  xl={3}  lg={2} md={1}   className="justify-content-center">
                   <Col >

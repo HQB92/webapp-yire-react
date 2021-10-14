@@ -10,6 +10,20 @@ body {
   background-color: #152f4f;
 }
 
+.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02:nth-child(2) {
+  opacity: 0 !important;
+}
+
+.sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 {
+  display: block;
+  width: 25px !important;
+  height: 3px !important;
+  background-color: whitesmoke !important;
+  opacity: 1  !important ;
+}
+
+
+
 .body-panddin{
   padding: 0;
   background-color: whitesmoke;
@@ -209,8 +223,27 @@ text{
   background-color: #152f4f ;
   color: whitesmoke;
   z-index: 10000;
+}
+.header_login{
+  
+  float: left;
+  display: flex;
+  text-align: right !important;
+  background-color: #152f4f;
+  align-items: center !important;
+  font-size: 12px;
+  color: rgb(255, 255, 255) !important;
+  justify-items: left;
+  vertical-align: middle;
+  align-items: flex-start;
 
+}
 
+@media (min-width: 992px){
+  .navbar-expand-lg {
+      flex-wrap: nowrap;
+      justify-content: center;
+  }
 }
 
 .accordion-button:focus {
@@ -290,15 +323,15 @@ span {
 
 .sidenav---sidenav---_2tBP {
   position: absolute;
-  height: 87vh !important;
-  top: 6.9vh !important;
+  height: 86vh ;
+  top: 7vh !important;
   bottom: 0;
   left: 0;
   z-index: 1006;
   min-width: 70px;
   background: #152f4f !important;
-  transition: min-width 0.2s;
-  height: 83vh;
+  transition: min-width 0.9s;
+
 }
 
 .icon-tam{
@@ -329,10 +362,11 @@ label{
 *:focus {
   outline: 0 !important;
 }
+
 .cerrar{
   display: block !important;
   position: absolute !important;
-  bottom: 0;
+  bottom: 20px;
 }
 .barra-login{
   text-align: center;
@@ -345,6 +379,7 @@ label{
 .footer {
   background: #152f4f;
   color: whitesmoke;
+  height: 7vh;
   position: fixed;
     bottom: 0;
     right: 0;
@@ -352,8 +387,14 @@ label{
     z-index: 1030;
 }
 .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47.sidenav---selected---1EK3y > .sidenav---navitem---9uL5T {
-  color: #e47f21;
+  color: #e47f21 !important;
 }
+.form-control {
+
+  background-color: whitesmoke;
+ 
+}
+
 .home{
   margin-top: 80px;
   position: absolute;
@@ -369,11 +410,10 @@ label{
   overflow-y: scroll;
 }
 .login{
-  min-height: 82vh;
-  margin-top: 120px;
+  
+  margin-top: 140px;
   background-color: whitesmoke;
-  padding: 20px !important;
-  display: block;
+ 
   text-align: center;
 }
 .btn-primary{
@@ -389,6 +429,46 @@ label{
   zoom: 110%;
 }
 
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after {
+  background: #e4b021 !important;
+  opacity: 0.2 !important;
+}
+
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo > *, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f > *, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo > *, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f > * {
+  color: #e47f21 !important;
+}
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {
+  color: #e47f21 !important;
+}
+.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47.sidenav---selected---1EK3y > .sidenav---navitem---9uL5T {
+  color: #e47f21 !important;
+}
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
+  opacity: 1;
+}
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {
+  color: whitesmoke !important; 
+}
+
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {
+  color: whitesmoke !important; 
+}
+
+.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47 > .sidenav---navitem---9uL5T {
+  color: whitesmoke !important;
+}
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
+
+  opacity: 1 !important;
+
+}
+.form-select {
+  color: #000000 !important;
+  background-color: whitesmoke !important;
+}
+.divleft div svg:hover{
+  color: whitesmoke;
+}
 select{
   margin-bottom: 1rem;
   width: 100%;

@@ -41,6 +41,7 @@ const Sidebar = () =>{
         if(time <= token_exp ){
             setUser(desencrip.data);
         }else{
+            logout();
             window.location = './';
         }
         // eslint-disable-next-line
