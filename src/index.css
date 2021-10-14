@@ -323,14 +323,14 @@ span {
 
 .sidenav---sidenav---_2tBP {
   position: absolute;
-  height: 88vh ;
-  top: 6.9vh !important;
+  height: 86vh ;
+  top: 7vh !important;
   bottom: 0;
   left: 0;
   z-index: 1006;
   min-width: 70px;
   background: #152f4f !important;
-  transition: min-width 0.2s;
+  transition: min-width 0.9s;
 
 }
 
@@ -366,7 +366,7 @@ label{
 .cerrar{
   display: block !important;
   position: absolute !important;
-  bottom: 11px;
+  bottom: 20px;
 }
 .barra-login{
   text-align: center;
@@ -379,6 +379,7 @@ label{
 .footer {
   background: #152f4f;
   color: whitesmoke;
+  height: 7vh;
   position: fixed;
     bottom: 0;
     right: 0;
