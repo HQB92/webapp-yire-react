@@ -10,6 +10,8 @@ import Navegacion from './components/navegacion';
 import DatosPersonales from './components/datosPersonales';
 import Dispositivos from './components/dispositivos';
 import Sidebar from './components/sidebar';
+import TomarAsitencia from './components/tomarasistencia';
+
 function App() {
     var token = localStorage.getItem('data_token')
   return (
@@ -32,6 +34,9 @@ function App() {
           </Route>
           <Route path='/dispositivos'>
             <Dispositivos></Dispositivos>
+          </Route>
+          <Route path='/tomarasistencia'>
+            <TomarAsitencia></TomarAsitencia>
           </Route>
         </Switch>
       </Router>

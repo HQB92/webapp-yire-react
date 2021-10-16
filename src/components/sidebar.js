@@ -106,7 +106,7 @@ const Sidebar = () =>{
                     <FormatListNumberedIcon style={{ fontSize: 35}}></FormatListNumberedIcon>
                     </NavIcon>
                     <NavText>Asistencia</NavText>
-                    <NavItem eventKey="asistencia/nueva">
+                    <NavItem eventKey="tomarasistencia">
                         <NavText>Ingresar Asistencia</NavText>
                     </NavItem>
                     <NavItem eventKey="asistencia/editar">
@@ -182,7 +182,7 @@ const Sidebar = () =>{
                         <NavText>Cambiar Contraseña</NavText>
                     </NavItem>
                 </NavItem>
-                <NavItem className="cerrar" eventKey="cerrar" onClick={logout} >
+                <NavItem eventKey="cerrar" onClick={logout} >
                     <NavIcon>
                         <PowerSettingsNewIcon style={{ fontSize: 35}}></PowerSettingsNewIcon>
                     </NavIcon>

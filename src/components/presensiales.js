@@ -101,19 +101,19 @@ const Presenciales= () =>{
             </Row>
             <Row> <Col> </Col></Row>
             <Row>
-                <Table striped bordered hover variant="dark">
+                <Table>
                     <thead>
                         <tr>
-                            <th>N°</th>
+                            
                             <th>RUT</th>
                             <th>Nombre</th>
                             <th>Respuesta</th>
                         </tr>
                     </thead>
                     <tbody>
-                            {alumnos.map((e,index)=>(e.mes === consulta.mes ?
+                            {alumnos.map((e)=>(e.mes === consulta.mes ?
                             <tr key={e.rut}>
-                                <td> {index+1}</td>
+                                
                                 <td value={e.rut}>{e.rut}</td>
                                 <td>{e.nombre} {e.apellidos}</td>
                                 <td>{e.respuesta}</td>

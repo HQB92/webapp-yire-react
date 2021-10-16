@@ -238,6 +238,19 @@ text{
   align-items: flex-start;
 
 }
+.title_home{
+  
+
+  display: inline-flex;
+  text-align: center !important;
+  align-items: center !important;
+
+
+  justify-items: center;
+  vertical-align: middle;
+
+
+}
 
 @media (min-width: 992px){
   .navbar-expand-lg {
@@ -333,7 +346,9 @@ span {
   transition: min-width 0.9s;
 
 }
-
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo > *, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f > * {
+  color: whitesmoke !important;
+}
 .icon-tam{
   width: 199px;
   display: block;
@@ -474,39 +489,28 @@ select{
   width: 100%;
   display: inline !important;
 }
-.table-dark {
-  font-size: 15px;
-  --bs-table-bg:#e47f21 I !important;
-  --bs-table-accent-bg: #e4b021 !important;
-  --bs-table-active-color: #4177ad !important;
-  color:  black;
-  border-color: #152f4f;
-  --bs-table-hover-bg: #e4b021 !important;
-  --bs-table-hover-color: black !important;
 
-}
-.table-striped{
 
-  --bs-table-accent-bg: #e4b021 !important;
-  --bs-table-active-color: #4177ad !important;
-
-  color:  black;
-}
-.table{
-  --bs-table-active-color: #e47f21 !important;
-  --bs-table-active-bg: #e47f21!important;
- 
- 
-}
 tr:hover{
-  background-color: brown;
+  background-color: #e47f21 !important;
+  font-weight: bold;
+  color: whitesmoke;
+  
 }
-.table-striped>tbody>tr:nth-of-type(odd) {
-  --bs-table-accent-bg:#e47f21;
-  --bs-table-hover-bg: #22ac1e !important;
-  color:  black;
+th{
+  background-color: #e47f21 !important;
+  font-weight: bold;
+  color: whitesmoke !important;
+  font-size: 18px;
+
 }
-  .boton-filtrar{
+th, td {
+  border-bottom: 1px solid rgba(233, 132, 8, 0.473);
+}
+tr:nth-child(even) {
+  background-color: #cecbcb;
+}
+.boton-filtrar{
   margin-top: 1rem;
   margin-bottom: 1rem;;
 }
