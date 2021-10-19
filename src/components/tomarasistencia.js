@@ -1,92 +1,50 @@
 import React, { useState, useEffect } from 'react';
+import { Form, Container, Button, Row, Col} from 'react-bootstrap';
 
-import { Form, Container, Button, Row, Col, Alert} from 'react-bootstrap';
-import  jwt from 'jwt-decode';
 
 const TomarAsitencia = () => {
-    const [user, setUser]=useState({
-        id:'',
-        firstname:'',
-        lastname:'',
-        email:'',
-        tipo_user:''
+    const [consulta, setConsulta] =useState({
+        curso:''
     });
-    var token = localStorage.getItem('data_token');
-    var token_exp = parseInt(localStorage.getItem('expire_at'));
-    const desencrip = jwt(JSON.parse(token));
-    var  today = new Date();
-    const hor=today.getHours();
-    const min=today.getMinutes();
-    const time=hor+""+min;
-    useEffect(() => {
-        if(time <= token_exp ){
-            setUser(desencrip.data);
-        }else{
-            localStorage.removeItem("data_token");
-            localStorage.removeItem("expire_at");
-            window.location = './';
-        }
-        // eslint-disable-next-line
-    },[]);
-    const [pass, setPass]=useState({
-        pass:'',
-        confirm:''
-    });
-    const handlePass =  (e) =>{
-        setPass({
-            ...pass,
+    const [alumnos, setAlumnos] = useState([]);
+    const alumnoCurso = async()=>{
+        setAlumnos([]);
+        const data = await fetch(`https://portal.yireliceo.com/API/obtener_alumnos_por_curso.php?consulta=${consulta.curso}`)
+        const datoalumnos = await data.json();
+        setAlumnos(datoalumnos);
+    }
+    const [dataAsis, SetDataAsis]=useState({
+        rut:'',
+        tipoAsis:''
+    })
+  
+    const handleChange =  e =>{
+        setConsulta({
+            ...consulta,
             [e.target.name]: e.target.value
         });
     }
-    const [data,]=useState({
-        id: '',
-        pass:''
-    });
-    const [show, setShow] = useState(true);
-    const enviarAPI = async (e) => {
-        e.preventDefault();
-        if (pass.pass === pass.confirm) {
-            data.pass=pass.pass
-            data.id=user.id
-            console.log(pass.pass)
-            console.log(data)
-            const cargaUtil = JSON.stringify(data);
-            const resSql = await fetch(`https://portal.yireliceo.com/API/usuario/actualizar_pass.php`, {
-                method: "POST",
-                body: cargaUtil
-            });
-            const exitoso = await resSql.json();
-            console.log(exitoso)
-            if(exitoso){
-                localStorage.removeItem("data_token");
-                localStorage.removeItem("expire_at");
-                window.location = './';
-            }else{
-                if (show) {
-                    return (
-                    <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-                        <Alert.Heading>Error</Alert.Heading>
-                        <p>
-                            Error al cambiar contraseña intente mas tarde.
-                        </p>
-                    </Alert>
-                    );
-                }
-                }
-            } else {
-                console.log("error");
-                }
-            }
+    const handleChangAsis =  e =>{
+        SetDataAsis({
+            ...dataAsis,
+            [e.target.name]: e.target.value
+        });
+        console.log(dataAsis)
+    }
+    useEffect(() => {
+        alumnoCurso()
+        // eslint-disable-next-line
+    },[consulta]);
+
     return (
         <Container fluid className="home h100 justify-content-md-center">
             <Row className="justify-content-md-center barra-login">
                 <Col md="auto"> <h3>Ingresar Asistencia</h3></Col>
-                
             </Row>
             <Row className="justify-content-md-center barra-login">
-                <Col md="4" >
-                    <h4>Curso</h4>
-                    <select className="form-select text-center"  name="curso" >
+                <Col md="6">
+                    <select className="form-select text-center"  name="curso" onChange={handleChange} >
+                        <option>Selecionar curso</option>
                         <option>PREKINDER</option>
                         <option>KINDER</option>
                         <option>1 BASICO</option>
@@ -106,45 +64,25 @@ const TomarAsitencia = () => {
                     </select>
                 </Col>
             </Row>
-            
-            <Row >
-                <Col xs={1} md={3}></Col>
-                <Col xs={10} md={6} >
-                    <Form onSubmit={enviarAPI}>
-                        <Form.Group className="mb-4" >
-                            <Form.Label>Nombres</Form.Label>
-                            <Form.Control className="bloqueo" disabled type="text" value={user.firstname} />
+            <Row className="justify-content-md-center barra-login">
+                <Col  >
+                    <Form  className="scrol">
+                    { alumnos.map((e)=>
+                        <Form.Group className="asistencia" >
+                            <label  key ={e.rut} className=" input_name" name="rut"  > {e.apellidos +" " + e.nombre}</label>
+                            <select className="form-select text-center select_asis margins"  name="tipoAsis" onChange={handleChangAsis} >
+                                <option> </option>
+                                <option value="P">Presente</option>
+                                <option value="O">Online</option>
+                                <option value="A">Ausente</option>
+                            </select>0
                         </Form.Group>
-                        <Form.Group className="mb-4" >
-                            <Form.Label>Apellidos</Form.Label>
-                            <Form.Control className="bloqueo" disabled type="text" value={user.lastname} />
-                        </Form.Group>
-                        <Form.Group className="mb-4" >
-                            <Form.Label>Rut</Form.Label>
-                            <Form.Control className="bloqueo" disabled type="text" value={user.id} name="rut" onChange />
-                        </Form.Group>
-                        <Form.Group className="mb-4" >
-                            <Form.Label>Correo</Form.Label>
-                            <Form.Control className="bloqueo" disabled type="text" value={user.email} />
-                        </Form.Group>
-                        <Col> <h5>Ingrese Nueva Contraseña</h5></Col>
-                        <Form.Group className="mb-4">
-                            <Form.Label as="legend" >
-                            </Form.Label>
-                            <Form.Control as="input" name="pass" type="password" onChange={handlePass}  >
-                            </Form.Control>
-                        </Form.Group>
-                        <Col> <h5>Repetir Nueva Contraseña</h5></Col>
-                        <Form.Group className="mb-4">
-                            <Form.Label as="legend" >
-                            </Form.Label>
-                            <Form.Control as="input" name="confirm" type="password"  onChange={handlePass}  >
-                            </Form.Control>
-                        </Form.Group>
-                        <Button type="submit">Guardar</Button>
+                    )}
+                        
                     </Form>
+                    {consulta.curso === ''? " ":<Button className="btn_margintop" type=" ">Guardar</Button>}
                 </Col>
-                <Col xs={1} md={3}></Col>
+                
             </Row>
         </Container>
     )

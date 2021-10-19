@@ -11,6 +11,10 @@ import DatosPersonales from './components/datosPersonales';
 import Dispositivos from './components/dispositivos';
 import Sidebar from './components/sidebar';
 import TomarAsitencia from './components/tomarasistencia';
+import ControlAsistenciaUsuarios from './components/controlAsisteciaUsuarios';
+import ControlAsistenciaAlumnos from './components/controlAsisteciaAlumnos';
+import HorarioLaboratorio from './components/horarioLaboratorio';
+import SolicitarLaboratorio from './components/solicitarLaboratorio'
 
 function App() {
     var token = localStorage.getItem('data_token')
@@ -37,6 +41,18 @@ function App() {
           </Route>
           <Route path='/tomarasistencia'>
             <TomarAsitencia></TomarAsitencia>
+          </Route>
+          <Route path='/horario_ingreso'>
+            <ControlAsistenciaUsuarios></ControlAsistenciaUsuarios>
+          </Route>
+          <Route path='/asistencia_alumnos'>
+            <ControlAsistenciaAlumnos></ControlAsistenciaAlumnos>
+          </Route>
+          <Route path='/laboratorio'>
+            <HorarioLaboratorio></HorarioLaboratorio>
+          </Route>
+          <Route path='/solicitar_laboratorio'>
+            <SolicitarLaboratorio></SolicitarLaboratorio>
           </Route>
         </Switch>
       </Router>

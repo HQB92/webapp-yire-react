@@ -9,9 +9,10 @@ import DesktopMacIcon from '@material-ui/icons/DesktopMac';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import PersonIcon from '@material-ui/icons/Person';
-import SettingsIcon from '@material-ui/icons/Settings';
+//import SettingsIcon from '@material-ui/icons/Settings';
 import HomeIcon from '@material-ui/icons/Home';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
+import ScheduleIcon from '@material-ui/icons/Schedule';
 import  jwt from 'jwt-decode';
 const Sidebar = () =>{
     const history = useHistory();
@@ -19,13 +20,14 @@ const Sidebar = () =>{
         localStorage.removeItem("data_token");
         localStorage.removeItem("expire_at");
     }
-    const [ , setUser]=useState({
+    const [user , setUser]=useState({
         id:'',
         firstname:'',
         lastname:'',
         email:'',
         tipo_user:''
     });
+    
         var token = localStorage.getItem('data_token')
         if (token === null ){
             window.location = './';
@@ -65,6 +67,7 @@ const Sidebar = () =>{
                     </NavIcon>
                     <NavText>Inicio</NavText>
                 </NavItem>
+                {user.tipo_user==='Administrador'? (
                 <NavItem eventKey="personal">
                     <NavIcon>
                     <AccountCircleIcon  style={{ fontSize: 35}}></AccountCircleIcon>
@@ -79,12 +82,13 @@ const Sidebar = () =>{
                     <NavItem eventKey="personal/listar">
                         <NavText>Listar Usuarios</NavText>
                     </NavItem>
-                </NavItem>
+                </NavItem>)
+                    :""}
                 <NavItem eventKey="Alumnos">
                     <NavIcon>
                     <PersonIcon style={{ fontSize: 35}}></PersonIcon>
                     </NavIcon>
-                    <NavText>Alumnos</NavText>
+                    <NavText>Alumnos</NavText>{/*
                     <NavItem eventKey="Alumnos/nuevo">
                         <NavText>Agregar Alumno</NavText>
                     </NavItem>
@@ -93,14 +97,15 @@ const Sidebar = () =>{
                     </NavItem>
                     <NavItem eventKey="Alumnos/listar">
                         <NavText>Listar por Curso</NavText>
-                    </NavItem>
+                    </NavItem>*/}
                     <NavItem eventKey="alumno/listar_presenciales">
                         <NavText>Listar Presenciales</NavText>
                     </NavItem>
-                    <NavItem eventKey="Alumnos/editarr_respuesta">
+                    {/*<NavItem eventKey="Alumnos/editarr_respuesta">
                         <NavText>Editar Respuesta</NavText>
-                    </NavItem>
+                    </NavItem>*/}
                 </NavItem>
+                {user.tipo_user==='Administrador'? (
                 <NavItem eventKey="asistencia">
                     <NavIcon>
                     <FormatListNumberedIcon style={{ fontSize: 35}}></FormatListNumberedIcon>
@@ -109,13 +114,20 @@ const Sidebar = () =>{
                     <NavItem eventKey="tomarasistencia">
                         <NavText>Ingresar Asistencia</NavText>
                     </NavItem>
-                    <NavItem eventKey="asistencia/editar">
-                        <NavText>Editar Asistencia</NavText>
-                    </NavItem>
-                    <NavItem eventKey="asistencia/listar">
+                    <NavItem eventKey="asistencia_alumnos">
                         <NavText>Asistencia por Curso </NavText>
                     </NavItem>
-                </NavItem>
+                </NavItem>)
+                    :""}
+              {user.tipo_user==='Administrador'? (
+                <NavItem eventKey="horario_ingreso">
+                    <NavIcon>
+                    <ScheduleIcon style={{ fontSize: 35}}></ScheduleIcon>
+                    </NavIcon>
+                    <NavText>Control de Asistencia</NavText>
+                </NavItem>)
+                    :""}
+                {user.tipo_user==='Administrador'? (
                 <NavItem eventKey="dispositivos">
                     <NavIcon>
                     <SettingsInputHdmiIcon style={{ fontSize: 35}}></SettingsInputHdmiIcon>
@@ -136,27 +148,26 @@ const Sidebar = () =>{
                     <NavItem eventKey="dispositivos/faltantes">
                         <NavText>Listar No Entregados</NavText>
                     </NavItem>
-                </NavItem>
-                <NavItem eventKey="laboratorio">
+                </NavItem>)
+                    :""}
+                <NavItem eventKey="laboratorios">
                     <NavIcon>
                     <DesktopMacIcon style={{ fontSize: 35}}></DesktopMacIcon>
                     </NavIcon>
                     <NavText>Laboratorio</NavText>
-                    <NavItem eventKey="laboratorio/solicitar">
+                    <NavItem eventKey="solicitar_laboratorio">
                         <NavText>Solicitar Laboratorio</NavText>
                     </NavItem>
-                    <NavItem eventKey="laboratorio/editar">
-                        <NavText>Editar Solicitud</NavText>
-                    </NavItem>
-                    <NavItem eventKey="laboratorio/Calendario">
+                    <NavItem eventKey="laboratorio">
                         <NavText>Calendario</NavText>
                     </NavItem>
                 </NavItem>
+                {user.tipo_user==='Administrador'? (
                 <NavItem eventKey="pagina">
                     <NavIcon>
                     <WebIcon style={{ fontSize: 35}}></WebIcon>
                     </NavIcon>
-                    <NavText>Pagina Web</NavText>
+                    <NavText >Pagina Web</NavText>
                     <NavItem eventKey="pagina/nueva_noticia">
                         <NavText>Nueva Noticia</NavText>
                     </NavItem>
@@ -169,19 +180,8 @@ const Sidebar = () =>{
                     <NavItem eventKey="pagina/eliminar_foto">
                         <NavText>Eliminar Imagen</NavText>
                     </NavItem>
-                </NavItem>
-                <NavItem eventKey="configuraciones">
-                    <NavIcon>
-                        <SettingsIcon style={{ fontSize: 35}}></SettingsIcon>
-                    </NavIcon>
-                    <NavText>Configuraciones</NavText>
-                    <NavItem eventKey="configuraciones/editar">
-                        <NavText>Editar Mis Datos</NavText>
-                    </NavItem>
-                    <NavItem eventKey="cambiar_pass">
-                        <NavText>Cambiar Contraseña</NavText>
-                    </NavItem>
-                </NavItem>
+                </NavItem>)
+                    :""}
                 <NavItem eventKey="cerrar" onClick={logout} >
                     <NavIcon>
                         <PowerSettingsNewIcon style={{ fontSize: 35}}></PowerSettingsNewIcon>
