@@ -42,13 +42,16 @@ const HorarioLaboratorio= () =>{
         const hora = eventInfo.event.start
         const hora_ini=hora.getHours();
         const hora_fin=hora.getHours()+1;
-        const min = hora.getMinutes();
+        let min = hora.getMinutes();
+        if (min === 0){
+            min='00';
+        }
         return (
-               <>
-                 <b>{hora_ini +":" + min +" - "+hora_fin +":" + min}</b>
-                 <p className='p_horario'>{eventInfo.event.title}</p>
-                 <p className='p_horario'>{eventInfo.event.extendedProps.first_name+ " " +eventInfo.event.extendedProps.last_name}</p>
-               </>
+                <>
+                    <b>{hora_ini +":" + min +" - "+hora_fin +":" + min}</b>
+                    <p className='p_horario'>{eventInfo.event.title}</p>
+                    <p className='p_horario'>{eventInfo.event.extendedProps.first_name+ " " +eventInfo.event.extendedProps.last_name}</p>
+                </>
         )
     };
 
@@ -78,8 +81,8 @@ const HorarioLaboratorio= () =>{
                     events={consulta}
                     eventClick={eventClick}
                     validRange={ ()=>{
-                        var curr = new Date;
-                        var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
+                        const curr = new Date();
+                        const firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
                         return {
                           start: firstday
                         };
@@ -94,15 +97,14 @@ const HorarioLaboratorio= () =>{
                     <Modal.Body>
                         <p>Curso: {evento.title}</p>
                         <p>Fecha: {evento.start.getDate()+"/"+(evento.start.getMonth()+1)  +"/"+ evento.start.getFullYear()}</p>
-                        <p>Hora Inicio: {evento.start.getHours()+":"+evento.start.getMinutes()}hrs.</p>
-                        <p>Hora Fin: {(evento.start.getHours()+1)+":"+evento.start.getMinutes()}hrs.</p>
+                        <p>Hora Inicio: {evento.start.getHours()+":"+ (evento.start.getMinutes()===0 ? '00': evento.start.getMinutes())}hrs.</p>
+                        <p>Hora Fin: {(evento.start.getHours()+1)+":"+(evento.start.getMinutes()===0 ? '00': evento.start.getMinutes())}hrs.</p>
                         <p>Profesor(a): {evento.extendedProps.first_name +" "+evento.extendedProps.last_name}</p>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="primary" onClick={handleClose}>Cerrar</Button>
                     </Modal.Footer>
                 </Modal>}
-            
         </Container>
     )
 }
