@@ -561,6 +561,10 @@ button.fc-today-button.fc-button:after{
   padding-top: 7px;
   position: relative;
 }
+.p_horario{
+  margin: 0 !important;
+}
+
 .btn_diseable{
   visibility: hidden;
   font-size: 0px;

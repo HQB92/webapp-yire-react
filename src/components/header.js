@@ -35,7 +35,7 @@ const Header = () =>{
         <Container className="header"  >
             <Navbar className="div" fixed="top" >
             <div className="divleft">
-            <div>{user.tipo_user === 'Administrador' ? <SupervisorAccountIcon style={{ fontSize: 45,marginLeft:15}}></SupervisorAccountIcon>  : <LocalLibraryIcon style={{ fontSize: 60,marginRight:10}}></LocalLibraryIcon>}   </div>
+            <div>{user.tipo_user === 'Administrador' ? <SupervisorAccountIcon style={{ fontSize: 45,marginLeft:15}}></SupervisorAccountIcon>  : <LocalLibraryIcon style={{ fontSize: 45,marginLeft:15}}></LocalLibraryIcon>}   </div>
             <div  className="datos">{user.firstname} {user.lastname}<p className="p-class">{user.tipo_user}(a)</p></div></div>
             </Navbar>
         </Container>

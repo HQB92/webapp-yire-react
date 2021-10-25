@@ -95,7 +95,7 @@ const SolicitarLaboratorio = () => {
                             <Form.Control  type="date" min={fecha} name="fecha" disabled={result===2} onChange={handleData}/>
                         </Form.Group>
                         <Form.Group className="mb-4" >
-                            <Form.Label>Apellidos</Form.Label>
+                            <Form.Label>Hora</Form.Label>
                             <select className="form-select text-center" disabled={result===2}  name="hora" onChange={handleData} >
                                 <option>Selecionar Hora</option>
                                 <option>08:30</option>
@@ -105,7 +105,7 @@ const SolicitarLaboratorio = () => {
                             </select>
                         </Form.Group>
                         <Form.Group className={result===2? "":"btn_diseable "}>
-                            <Form.Label>Rut</Form.Label>
+                            <Form.Label>Curso</Form.Label>
                             <select className="form-select text-center"  name="curso" onChange={handleData} >
                                 <option>Selecionar curso</option>
                                 <option>PREKINDER</option>
@@ -120,27 +120,27 @@ const SolicitarLaboratorio = () => {
                                 <option>8 BASICO</option>
                                 <option>1 MEDIO</option>
                                 <option>2 MEDIO</option>
+                                <option>3 MEDIO</option>
                                 <option>3 MEDIO A TP</option>
                                 <option>3 MEDIO B HC</option>
+                                <option>4 MEDIO</option>
                                 <option>4 MEDIO A TP</option>
                                 <option>4 MEDIO B HC</option>
                             </select>
                         </Form.Group>
                         <Col><Button onClick={revisarFecha} className={result===0? "":"btn_diseable "} >Validar Fecha</Button></Col>
                         <Col><Button className={result===2 ? "":"btn_diseable "} type="submit">Guardar</Button></Col>
-                        <Col><h1 className={result===3? "":"btn_diseable "}> Fecha ya registrada</h1></Col>
-                        <Modal show={show} onHide={handleClose}>
+                        <Modal show={show} onHide={handleClose} animation={true} aria-labelledby="contained-modal-title-vcenter" centered>
                             <Modal.Header >
                                 <Modal.Title>Aviso</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
-                                <p>Fecha ya registrada, vuelva a selecionar otra fecha.</p>
+                                <p>Fecha ya registrada, vuelva a selecionar otra fecha u otra hora.</p>
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button variant="primary" onClick={handleClose}>Cerrar</Button>
                             </Modal.Footer>
                         </Modal>
-                          
                     </Form>
                 </Col>
                 <Col xs={1} md={3}></Col>

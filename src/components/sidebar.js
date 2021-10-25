@@ -10,6 +10,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import PersonIcon from '@material-ui/icons/Person';
 //import SettingsIcon from '@material-ui/icons/Settings';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import HomeIcon from '@material-ui/icons/Home';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import ScheduleIcon from '@material-ui/icons/Schedule';
@@ -27,7 +28,6 @@ const Sidebar = () =>{
         email:'',
         tipo_user:''
     });
-    
         var token = localStorage.getItem('data_token')
         if (token === null ){
             window.location = './';
@@ -182,6 +182,12 @@ const Sidebar = () =>{
                     </NavItem>
                 </NavItem>)
                     :""}
+                <NavItem eventKey="cambiar_pass">
+                    <NavIcon>
+                        <VpnKeyIcon style={{ fontSize: 35}}></VpnKeyIcon>
+                    </NavIcon>
+                    <NavText>Cambiar Contraseña</NavText>
+                </NavItem>
                 <NavItem eventKey="cerrar" onClick={logout} >
                     <NavIcon>
                         <PowerSettingsNewIcon style={{ fontSize: 35}}></PowerSettingsNewIcon>
@@ -189,7 +195,6 @@ const Sidebar = () =>{
                     <NavText>Cerrra Sesión</NavText>
                 </NavItem>
             </SideNav.Nav>
-            
         </SideNav>
     )
 }
