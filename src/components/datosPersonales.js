@@ -51,7 +51,7 @@ const DatosPersonales = () => {
             console.log(pass.pass)
             console.log(data)
             const cargaUtil = JSON.stringify(data);
-            const resSql = await fetch(`https://portal.yireliceo.com/API/usuario/actualizar_pass.php`, {
+            const resSql = await fetch(`https://portal.yireliceo.com/API/actualizar_pass.php`, {
                 method: "POST",
                 body: cargaUtil
             });
