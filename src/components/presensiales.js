@@ -100,20 +100,18 @@ const Presenciales= () =>{
                 </Col>
             </Row>
             <Row> <Col> </Col></Row>
-            <Row>
-                <Table striped bordered hover variant="dark">
+            <Row className="scrol2">
+                <Table>
                     <thead>
                         <tr>
-                            <th>N°</th>
                             <th>RUT</th>
                             <th>Nombre</th>
                             <th>Respuesta</th>
                         </tr>
                     </thead>
                     <tbody>
-                            {alumnos.map((e,index)=>(e.mes === consulta.mes ?
+                            {alumnos.map((e)=>(e.mes === consulta.mes ?
                             <tr key={e.rut}>
-                                <td> {index+1}</td>
                                 <td value={e.rut}>{e.rut}</td>
                                 <td>{e.nombre} {e.apellidos}</td>
                                 <td>{e.respuesta}</td>
@@ -122,7 +120,7 @@ const Presenciales= () =>{
                     </tbody>
                 </Table>
             </Row>
-            <CSVLink data={alumnos} filename={consulta.curso+"_"+consulta.mes+".csv"}> <Button>Exportar a CSV</Button> </CSVLink>
+            <CSVLink data={alumnos} filename={consulta.curso+"_mes_"+consulta.mes+".csv"}> <Button className="btn_margintop">Exportar a CSV</Button> </CSVLink>
         </Container>
     )
 }
