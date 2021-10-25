@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-import { Form, Container, Button, Row, Col} from 'react-bootstrap';
+import { Form, Container, Button, Row, Col, Modal} from 'react-bootstrap';
 import axios from 'axios';
 
 
 const Login= () =>{
-
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const [usuario, setUsuario] = useState({
         email: '',
         password: ''
@@ -31,7 +33,7 @@ const Login= () =>{
             }
             
         } catch(e){
-            console.log(e);
+            handleShow()
         }
     }
 
@@ -40,7 +42,6 @@ const Login= () =>{
                 <Col><h1>Iniciar Sesión</h1></Col>
             <Row  xl={3}  lg={2} md={1}   className="justify-content-center">
                   <Col >
-                    
                     <Form onSubmit={login}>
                         <Form.Group className="mb-4" >
                             <Form.Label>Correo electronico</Form.Label>
@@ -56,6 +57,17 @@ const Login= () =>{
                     </Form>
                 </Col>
             </Row>
+            <Modal show={show} onHide={handleClose} animation={true} aria-labelledby="contained-modal-title-vcenter" centered>
+                <Modal.Header >
+                    <Modal.Title>Aviso</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>Error en contraseña, porf favor vuelva a ingresarla correctamente</p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="primary" onClick={handleClose}>Cerrar</Button>
+                </Modal.Footer>
+            </Modal>
         </Container>
     )
 }
