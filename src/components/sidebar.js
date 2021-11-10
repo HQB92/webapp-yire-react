@@ -14,6 +14,7 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import HomeIcon from '@material-ui/icons/Home';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import ScheduleIcon from '@material-ui/icons/Schedule';
+
 import  jwt from 'jwt-decode';
 const Sidebar = () =>{
     const history = useHistory();
@@ -88,7 +89,14 @@ const Sidebar = () =>{
                     <NavIcon>
                     <PersonIcon style={{ fontSize: 35}}></PersonIcon>
                     </NavIcon>
-                    <NavText>Alumnos</NavText>{/*
+                    <NavText>Alumnos</NavText>
+                    <NavItem eventKey="matricular">
+                        <NavText>Matriculas 2022</NavText>
+                    </NavItem>
+                    <NavItem eventKey="confirmacion_matricula">
+                        <NavText>Confirmacion Matricula</NavText>
+                    </NavItem>
+                    {/*
                     <NavItem eventKey="Alumnos/nuevo">
                         <NavText>Agregar Alumno</NavText>
                     </NavItem>

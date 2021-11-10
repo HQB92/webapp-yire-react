@@ -199,6 +199,15 @@ text{
   vertical-align: middle;
   align-items: flex-start;
 }
+.select_matricula{
+  margin-bottom: 0 !important;
+
+}
+
+.input-group-text {
+  color: gray !important;
+  min-width: 68px;
+}
 
 .title_home{
   display: inline-flex;
@@ -213,6 +222,14 @@ text{
       flex-wrap: nowrap;
       justify-content: center;
   }
+}
+
+h2{
+  margin-top: 25px !important;
+}
+
+.matricula {
+  display: flex;
 }
 
 .accordion-button:focus {
