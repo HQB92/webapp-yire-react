@@ -390,6 +390,10 @@ label{
 .fc-h-event .fc-event-title-container {
   background-color: #e47f21;
 }
+.row{
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
 
 .fc .fc-view-harness {
   flex-grow: 1;

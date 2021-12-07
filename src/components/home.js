@@ -6,7 +6,7 @@ const Home = () =>{
     return(
         <Container fluid className="home h100 justify-content-md-center">
             <Col>
-                <h1>Bienvenidos al Portal Intitucional YIRE</h1>
+                <h1>Bienvenidos al Portal Institucional YIRE</h1>
             </Col>
             <Col className="title_home" >
             <img
