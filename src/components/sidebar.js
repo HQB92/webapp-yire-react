@@ -91,7 +91,10 @@ const Sidebar = () =>{
                     </NavIcon>
                     <NavText>Alumnos</NavText>
                     <NavItem eventKey="matricular">
-                        <NavText>Matriculas 2022</NavText>
+                        <NavText>Actualizar Matricula 2022</NavText>
+                    </NavItem>
+                    <NavItem eventKey="matricular_nuevo">
+                        <NavText>Nueva Matricula 2022</NavText>
                     </NavItem>
                     <NavItem eventKey="confirmacion_matricula">
                         <NavText>Confirmacion Matricula</NavText>

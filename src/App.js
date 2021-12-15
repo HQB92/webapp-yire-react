@@ -15,9 +15,10 @@ import ControlAsistenciaUsuarios from './components/controlAsisteciaUsuarios';
 import ControlAsistenciaAlumnos from './components/controlAsisteciaAlumnos';
 import HorarioLaboratorio from './components/horarioLaboratorio';
 import SolicitarLaboratorio from './components/solicitarLaboratorio'
-import MatriculaProximoAño from './components/matriculaProximoAño';
+//import MatriculaProximoAño from './components/matriculaProximoAño';
 import ConfirmacionMatricula from './components/confirmacionMatricula';
-
+import Example from './components/ComponentToPrint';
+import Example2 from './components/ComponentToPrint2';
 function App() {
     var token = localStorage.getItem('data_token')
   return (
@@ -57,7 +58,10 @@ function App() {
             <SolicitarLaboratorio></SolicitarLaboratorio>
           </Route>
           <Route path='/matricular'>
-            <MatriculaProximoAño></MatriculaProximoAño>
+            <Example></Example>
+          </Route>
+          <Route path='/matricular_nuevo'>
+            <Example2></Example2>
           </Route>
           <Route path='/confirmacion_matricula'>
             <ConfirmacionMatricula></ConfirmacionMatricula>

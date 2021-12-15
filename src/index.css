@@ -203,7 +203,12 @@ text{
   margin-bottom: 0 !important;
 
 }
-
+.btn_especial{
+  margin: 100px;
+}
+.imprimir{
+  zoom: 0.9;
+}
 .input-group-text {
   color: gray !important;
   min-width: 68px;
@@ -265,6 +270,9 @@ svg:hover{
 
 .menu2{
   color: rgba(0,0,0,.55);
+}
+.btn_imprimir{
+  z-index: 1000000;
 }
 
 span {
@@ -391,8 +399,8 @@ label{
   background-color: #e47f21;
 }
 .row{
-  padding-bottom: 3px;
-  padding-top: 3px;
+  padding-bottom: 0px;
+  padding-top: 0px;
 }
 
 .fc .fc-view-harness {
@@ -442,7 +450,42 @@ label{
   max-height: 86vh;
   overflow-y: scroll;
 }
+.home2{
+  margin-top: 50px;
+  position: absolute;
+  right: 0;
+  padding-left:  6vw ;
+  padding-right: 6vw;
+  width:100vw;
+  background-color: white !important;
+  display: block;
+  text-align: center;
+  padding-bottom: 3rem;
+  
+}
+.home2 h2,h4,h5,p,h3{
+  zoom: 0.65;
+  color: #000000;
+  padding-top: 0;
+  margin-top: 0px !important;
+}
+.zoom{
+  zoom: 0.6;
+}
+.form-control {
 
+  font-size: 11px;
+
+}
+
+.form-select {
+  font-size: 11px;
+ 
+}
+
+.input-group-text {
+  font-size: 11px;
+}
 .login{
   margin-top: 140px;
   background-color: whitesmoke;

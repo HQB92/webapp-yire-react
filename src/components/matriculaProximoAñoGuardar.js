@@ -3,7 +3,7 @@ import { Container, Col, Row,InputGroup, FormControl,Button,  Form } from 'react
 import Logo  from '../img/header-footer/logo-yire.png';
 
 
-export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
+export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
     const [datosGenera, setDatosGenera]=useState({
         rut:'' ,
         nombre_alumno:'' ,
@@ -65,8 +65,8 @@ export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
         e.preventDefault();
         if (datosGenera.rut_madre !== "" || datosGenera.rut_padre !== "") {
             const cargaUtil = JSON.stringify(datosGenera);
-            const resSql = await fetch(`https://portal.yireliceo.com/API/actualizar_alumno_matricula_rut.php`, {
-                method: "PUT",
+            const resSql = await fetch(`https://portal.yireliceo.com/API/guardar_matricula.php`, {
+                method: "POST",
                 body: cargaUtil
             });
             const exitoso = await resSql.json();
@@ -106,7 +106,7 @@ export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
                             <InputGroup className="">
                                 <InputGroup.Text id="">Curso</InputGroup.Text>
                                 <select className="form-select select_matricula" aria-label="Username"
-                                    aria-describedby="basic-addon1" name="curso" onChange={handleData} value={datosGenera.curso}>
+                                    aria-describedby="basic-addon1" name="curso" onChange={handleData}>
                                     <option>PREKINDER</option>
                                     <option>KINDER</option>
                                     <option>1 BASICO</option>
@@ -125,6 +125,7 @@ export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
                                     <option>4 MEDIO B HC</option>
                                     <option>I NIVEL NOCTURA</option>
                                     <option>II NIVEL NOCTURNA</option>
+
                                 </select>
                                 </InputGroup>
                             </Col>
@@ -190,7 +191,7 @@ export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
                 </Row>
                 <Row>
                    
-                    <Col xs={3} md={4} lg={3}>
+                    <Col xs={4} md={4} lg={3}>
                         <InputGroup className="">
                         <InputGroup.Text id="">Rut</InputGroup.Text>
                             <FormControl
@@ -204,9 +205,7 @@ export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
                         </InputGroup>
             
                     </Col>
-                    <Col xs={1} md={1} lg={1}>
-                        <Button className='zoom' onClick={alumnoCurso}>Buscar</Button>
-                    </Col>
+                    
                     
                     <Col xs={5} md={4} lg={5}>
                         <InputGroup className="">
@@ -319,7 +318,7 @@ export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
                         <InputGroup className="">
                             <InputGroup.Text id="">Establecimiento de Procedencia</InputGroup.Text>
                                 <FormControl
-                                value={datosGenera.establecimineto_procedencia}
+                                
                                 name='establecimineto_procedencia'
                                 className="text-uppercase"
                                 aria-label="Username"
@@ -333,7 +332,7 @@ export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
                         <InputGroup className="">
                             <InputGroup.Text id="">Fecha de Ingreso</InputGroup.Text>
                                 <FormControl
-                                value={datosGenera.fecha_ingreso_establecimineto}
+                                
                                 name='fecha_ingreso_establecimineto'
                                 className="text-uppercase"
                                 aria-label="Username"
@@ -350,7 +349,7 @@ export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
                         <InputGroup className="">
                             <InputGroup.Text id="">Necesidades especificas del aprendizaje</InputGroup.Text>
                                 <FormControl
-                                value={datosGenera.pie}
+                                
                                 name='pie'
                                 className="text-uppercase"
                                 aria-label="Username"
@@ -781,7 +780,7 @@ export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
                     </Col>
                     <Row>
                     <Col >
-                        <Button type="submit">Actualizar</Button>
+                        <Button type="submit">Guardar</Button>
                     </Col>
                 </Row>
                 </Row>
