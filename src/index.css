@@ -463,27 +463,51 @@ label{
   padding-bottom: 3rem;
   
 }
-.home2 h2,h4,h5,p,h3{
+.home2  h2{
+  zoom: 0.65;
+  color: #000000 !important;
+  padding-top: 0;
+/* margin-top: 0px !important;
+}
+.home2  h4{
+  zoom: 0.65;
+  color: #000000;
+  padding-top: 0;
+  margin-top: 0px !important;*/
+}
+.home2  h5{
   zoom: 0.65;
   color: #000000;
   padding-top: 0;
   margin-top: 0px !important;
 }
-.zoom{
+.home2  p{
+  zoom: 0.65;
+  color: #000000;
+  padding-top: 0;
+  margin-top: 0px !important;
+}
+.home2  h3{
+  zoom: 0.65;
+  color: #000000;
+  padding-top: 0;
+  margin-top: 0px !important;
+}
+.home2 .zoom{
   zoom: 0.6;
 }
-.form-control {
+.home2  .form-control {
 
   font-size: 11px;
 
 }
 
-.form-select {
+.home2  .form-select {
   font-size: 11px;
  
 }
 
-.input-group-text {
+.home2  .input-group-text {
   font-size: 11px;
 }
 .login{
@@ -529,11 +553,11 @@ label{
 }
 
 .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {
-  color: whitesmoke !important; 
+  color: whitesmoke !important;
 }
 
 .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {
-  color: whitesmoke !important; 
+  color: whitesmoke !important;
 }
 
 .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47 > .sidenav---navitem---9uL5T {

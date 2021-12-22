@@ -138,14 +138,17 @@ const Sidebar = () =>{
                     <NavText>Control de Asistencia</NavText>
                 </NavItem>)
                     :""}
-                {user.tipo_user==='Administrador'? (
+                
                 <NavItem eventKey="dispositivos">
                     <NavIcon>
                     <SettingsInputHdmiIcon style={{ fontSize: 35}}></SettingsInputHdmiIcon>
                     </NavIcon>
-                    <NavText>Dispositivos</NavText>
+                    <NavText>Inventario</NavText>
                     <NavItem eventKey="dispositivos/nuevo">
-                        <NavText> Agregar Dispositivo</NavText>
+                        <NavText> Agregar inventario</NavText>
+                    </NavItem>
+                    <NavItem eventKey="listar_inventario">
+                        <NavText> Listar Por Tipo</NavText>
                     </NavItem>
                     <NavItem eventKey="dispositivos/editar_eliminar">
                         <NavText>Editar o Eliminar</NavText>
@@ -159,8 +162,8 @@ const Sidebar = () =>{
                     <NavItem eventKey="dispositivos/faltantes">
                         <NavText>Listar No Entregados</NavText>
                     </NavItem>
-                </NavItem>)
-                    :""}
+                </NavItem>
+                    
                 <NavItem eventKey="laboratorios">
                     <NavIcon>
                     <DesktopMacIcon style={{ fontSize: 35}}></DesktopMacIcon>

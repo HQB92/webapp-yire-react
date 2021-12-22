@@ -48,12 +48,6 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
         curso:''
    })
 
-    const alumnoCurso = async()=>{
-        const data = await fetch(`https://portal.yireliceo.com/API/obtener_alumno_matricula_rut.php?rut=${datosGenera.rut}`)
-        const datoalumnos = await data.json();
-        console.log(datoalumnos)
-        setDatosGenera(datoalumnos);
-    }
 
    const handleData =  (e) =>{
         setDatosGenera({
@@ -107,6 +101,7 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                                 <InputGroup.Text id="">Curso</InputGroup.Text>
                                 <select className="form-select select_matricula" aria-label="Username"
                                     aria-describedby="basic-addon1" name="curso" onChange={handleData}>
+                                    <option></option>
                                     <option>PREKINDER</option>
                                     <option>KINDER</option>
                                     <option>1 BASICO</option>
@@ -125,11 +120,10 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                                     <option>4 MEDIO B HC</option>
                                     <option>I NIVEL NOCTURA</option>
                                     <option>II NIVEL NOCTURNA</option>
-
                                 </select>
-                                </InputGroup>
-                            </Col>
-                         </Col>
+                            </InputGroup>
+                        </Col>
+                    </Col>
                  </Row>
                 <Row >
                         <h4> I-. Datos Personales</h4>
@@ -179,7 +173,6 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                     <Col xs={4} md={3} lg={4}>
                         <InputGroup className="">
                             <InputGroup.Text id="">Sexo</InputGroup.Text>
-                            
                             <select className="form-select select_matricula" aria-label="Username" name='Sexo'
                                 aria-describedby="basic-addon1" onChange={handleData} value={datosGenera.Sexo} >
                                     <option> </option>
@@ -190,12 +183,10 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                     </Col>
                 </Row>
                 <Row>
-                   
                     <Col xs={4} md={4} lg={3}>
                         <InputGroup className="">
                         <InputGroup.Text id="">Rut</InputGroup.Text>
                             <FormControl
-                            
                             name='rut'
                             className="text-uppercase"
                             aria-label="Username"
@@ -203,10 +194,7 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                             onChange={handleData}
                             />
                         </InputGroup>
-            
                     </Col>
-                    
-                    
                     <Col xs={5} md={4} lg={5}>
                         <InputGroup className="">
                         <InputGroup.Text id="">Fecha Nacimeinto</InputGroup.Text>
@@ -318,7 +306,6 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                         <InputGroup className="">
                             <InputGroup.Text id="">Establecimiento de Procedencia</InputGroup.Text>
                                 <FormControl
-                                
                                 name='establecimineto_procedencia'
                                 className="text-uppercase"
                                 aria-label="Username"
@@ -332,7 +319,6 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                         <InputGroup className="">
                             <InputGroup.Text id="">Fecha de Ingreso</InputGroup.Text>
                                 <FormControl
-                                
                                 name='fecha_ingreso_establecimineto'
                                 className="text-uppercase"
                                 aria-label="Username"
@@ -349,7 +335,6 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                         <InputGroup className="">
                             <InputGroup.Text id="">Necesidades especificas del aprendizaje</InputGroup.Text>
                                 <FormControl
-                                
                                 name='pie'
                                 className="text-uppercase"
                                 aria-label="Username"
@@ -551,7 +536,6 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                                 />
                         </InputGroup>
                     </Col>
-                    
                 </Row>
                 <Row>
                 <Col xs={5} md={6} lg={5}>
@@ -730,11 +714,8 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                                     />
                             </InputGroup>
                         </Col>
-            
                 </Row>
                 <Row>
-                        
-                        
                         <Col >
                             <InputGroup className="">
                                 <InputGroup.Text id="">En caso de poserlo a cual establecimiento de salud debe ser derivado</InputGroup.Text>
@@ -759,7 +740,6 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                             enlaces), lo anterior mencionado con el fin de resguardar el cuidado de nuestros niños y niñas.
                         </p>
                     </Col>
-                    
                 </Row>
                 <Row>
                     <Col xs={12} md={12}>
@@ -771,7 +751,6 @@ export const MatriculaProximoAñoGuardar = React.forwardRef((props, ref) =>{
                             página web, colegio interactivo, redes sociales (CRA), pendones de información y promoción educativa. Etc.
                         </p>
                     </Col>
-                    
                 </Row>
                 <Row className='justify-content-md-center'>
                     <Col xs={12} md={12}>

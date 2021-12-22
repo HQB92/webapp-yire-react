@@ -212,7 +212,7 @@ export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
                         <InputGroup className="">
                         <InputGroup.Text id="">Fecha Nacimeinto</InputGroup.Text>
                             <FormControl
-                            value={datosGenera.fechaNacimiento_alumno}
+                             value={datosGenera.fechaNacimiento_alumno}
                              name='fechaNacimiento_alumno'
                              className="text-uppercase"
                              aria-label="Username"
@@ -226,7 +226,7 @@ export const MatriculaProximoAño = React.forwardRef((props, ref) =>{
                         <InputGroup className="">
                         <InputGroup.Text id="">Edad</InputGroup.Text>
                             <FormControl
-                            value={datosGenera.edad_alumno}
+                             value={datosGenera.edad_alumno}
                              name='edad_alumno'
                              className="text-uppercase"
                              aria-label="Username"

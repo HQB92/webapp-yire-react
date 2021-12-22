@@ -19,6 +19,7 @@ import SolicitarLaboratorio from './components/solicitarLaboratorio'
 import ConfirmacionMatricula from './components/confirmacionMatricula';
 import Example from './components/ComponentToPrint';
 import Example2 from './components/ComponentToPrint2';
+import Inventario from './components/inventario';
 function App() {
     var token = localStorage.getItem('data_token')
   return (
@@ -65,6 +66,9 @@ function App() {
           </Route>
           <Route path='/confirmacion_matricula'>
             <ConfirmacionMatricula></ConfirmacionMatricula>
+          </Route>
+          <Route path='/listar_inventario'>
+            <Inventario></Inventario>
           </Route>
         </Switch>
       </Router>
