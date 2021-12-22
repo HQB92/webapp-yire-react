@@ -12,12 +12,10 @@ const HorarioLaboratorio= () =>{
 
     });
     const cargarDatos = async()=>{
-        
         const data = await fetch(`https://portal.yireliceo.com/API/obtener_calendario.php`)
         const datoalumnos = await data.json();
         setConsulta(datoalumnos);
     }
-
     useEffect(() => {
         cargarDatos();
         // eslint-disable-next-line
@@ -32,13 +30,14 @@ const HorarioLaboratorio= () =>{
             first_name:'',
             last_name:''
         }
-
     });
+
     const eventClick = (e) => {
         setEvento(e.event)
         handleShow()
-      };
-      const renderEventContent = (eventInfo) => {
+    };
+
+    const renderEventContent = (eventInfo) => {
         const hora = eventInfo.event.start
         const hora_ini=hora.getHours();
         const hora_fin=hora.getHours()+1;
@@ -46,12 +45,12 @@ const HorarioLaboratorio= () =>{
         if (min === 0){
             min='00';
         }
-        return (
-                <>
-                    <b>{hora_ini +":" + min +" - "+hora_fin +":" + min}</b>
-                    <p className='p_horario'>{eventInfo.event.title}</p>
-                    <p className='p_horario'>{eventInfo.event.extendedProps.first_name+ " " +eventInfo.event.extendedProps.last_name}</p>
-                </>
+    return (
+            <>
+                <b>{hora_ini +":" + min +" - "+hora_fin +":" + min}</b>
+                <p className='p_horario'>{eventInfo.event.title}</p>
+                <p className='p_horario'>{eventInfo.event.extendedProps.first_name+ " " +eventInfo.event.extendedProps.last_name}</p>
+            </>
         )
     };
 
