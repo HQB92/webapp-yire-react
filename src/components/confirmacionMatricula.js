@@ -1,12 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React,{ useEffect,  useState}  from 'react';
 import { Table, Container, Row, Col, Button} from 'react-bootstrap';
 import { CSVLink } from "react-csv";
 
-const Presenciales= () =>{
+const ConfirmacionMatricula= () =>{
     const [consulta, setConsulta] =useState({
         curso:'PREKINDER',
-        mes:'11',
-        mostar:'1',
     });
     
     const [ , setMesBBDD] = useState([]);
@@ -14,20 +12,12 @@ const Presenciales= () =>{
     const alumnoCurso = async(setAlumnos)=>{
         setAlumnos([]);
         setMesBBDD([]);
-        const data = await fetch(`https://portal.yireliceo.com/API/obtener_alumnos_curso.php?consulta=${consulta.curso}`)
+        const data = await fetch(`https://portal.yireliceo.com/API/obtener_confimatri_curso.php?consulta=${consulta.curso}`)
         const datoalumnos = await data.json();
         setAlumnos(datoalumnos);
         setMesBBDD(datoalumnos[0]);
     }
 
-    const alumnoSi = async(setAlumnos)=>{
-        setAlumnos([]);
-        setMesBBDD([]);
-        const data = await fetch(`https://portal.yireliceo.com/API/obtener_alumnos_curso_si.php?consulta=${consulta.curso}`)
-        const datoalumnos = await data.json();
-        setAlumnos(datoalumnos);
-        setMesBBDD(datoalumnos[0]);
-    }
     const handleChange =  e =>{
         setConsulta({
             ...consulta,
@@ -35,41 +25,17 @@ const Presenciales= () =>{
         });
     }
     useEffect(() => {
-        buscarDatos()
+        alumnoCurso(setAlumnos)
         // eslint-disable-next-line
     }, [consulta]);
 
-    const buscarDatos = ()=>{
-        if (consulta.mostar === "1") {
-            alumnoCurso(setAlumnos)
-        }
-        if (consulta.mostar === "2") {
-            alumnoSi(setAlumnos)
-        }
-    }
     return(
         <Container fluid className="home h100 justify-content-md-center">
             <Row className="justify-content-md-center">
-                <Col md="auto"> <h3>Asistencia Presencial a Clases</h3></Col>
+                <Col md="auto"> <h3>Confirmacion Matricula 2022</h3></Col>
             </Row>
             <Row className="text-center">
-                <Col md="4" className="text-center">
-                    <h4>Mes</h4>
-                    <select className="form-select text-center" disabled  name="mes" onChange={handleChange}>
-                        {/*<option value="1">Enero</option>
-                        <option value="2">Febrero</option>
-                        <option value="3">Marzo</option>
-                        <option value="4">Abril</option>
-                        <option value="5">Mayo</option>
-                        <option value="6">Junio</option>
-                        <option value="7">Julio</option>
-                        <option value="8">Agosto</option>
-                        <option value="9">Septiembre</option>
-                        <option value="10">Octubre</option>*/}
-                        <option value="11">Noviembre</option>
-                        <option value="12">Diciembre</option>
-                    </select>
-                </Col>
+                <Col md={4}></Col>
                 <Col md="4" >
                     <h4>Curso</h4>
                     <select className="form-select text-center"  name="curso" onChange={handleChange}>
@@ -91,13 +57,7 @@ const Presenciales= () =>{
                         <option>4 MEDIO B HC</option>
                     </select>
                 </Col>
-                <Col md="4">
-                    <h4>Mostrar</h4>
-                    <select className="form-select text-center"  aria-label="Default select example" name="mostar" onChange={handleChange}>
-                        <option value="1">Todos</option>
-                        <option value="2">Solo si</option>
-                    </select>
-                </Col>
+                <Col md={4}></Col>
             </Row>
             <Row> <Col> </Col></Row>
             <Row className="scrol2">
@@ -127,4 +87,4 @@ const Presenciales= () =>{
     )
 }
 
-export default Presenciales;
+export default ConfirmacionMatricula;

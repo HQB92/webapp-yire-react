@@ -199,6 +199,20 @@ text{
   vertical-align: middle;
   align-items: flex-start;
 }
+.select_matricula{
+  margin-bottom: 0 !important;
+
+}
+.btn_especial{
+  margin: 100px;
+}
+.imprimir{
+  zoom: 0.9;
+}
+.input-group-text {
+  color: gray !important;
+  min-width: 68px;
+}
 
 .title_home{
   display: inline-flex;
@@ -213,6 +227,14 @@ text{
       flex-wrap: nowrap;
       justify-content: center;
   }
+}
+
+h2{
+  margin-top: 25px !important;
+}
+
+.matricula {
+  display: flex;
 }
 
 .accordion-button:focus {
@@ -248,6 +270,9 @@ svg:hover{
 
 .menu2{
   color: rgba(0,0,0,.55);
+}
+.btn_imprimir{
+  z-index: 1000000;
 }
 
 span {
@@ -373,6 +398,10 @@ label{
 .fc-h-event .fc-event-title-container {
   background-color: #e47f21;
 }
+.row{
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
 
 .fc .fc-view-harness {
   flex-grow: 1;
@@ -421,7 +450,66 @@ label{
   max-height: 86vh;
   overflow-y: scroll;
 }
+.home2{
+  margin-top: 50px;
+  position: absolute;
+  right: 0;
+  padding-left:  6vw ;
+  padding-right: 6vw;
+  width:100vw;
+  background-color: white !important;
+  display: block;
+  text-align: center;
+  padding-bottom: 3rem;
+  
+}
+.home2  h2{
+  zoom: 0.65;
+  color: #000000 !important;
+  padding-top: 0;
+/* margin-top: 0px !important;
+}
+.home2  h4{
+  zoom: 0.65;
+  color: #000000;
+  padding-top: 0;
+  margin-top: 0px !important;*/
+}
+.home2  h5{
+  zoom: 0.65;
+  color: #000000;
+  padding-top: 0;
+  margin-top: 0px !important;
+}
+.home2  p{
+  zoom: 0.65;
+  color: #000000;
+  padding-top: 0;
+  margin-top: 0px !important;
+}
+.home2  h3{
+  zoom: 0.65;
+  color: #000000;
+  padding-top: 0;
+  margin-top: 0px !important;
+}
+.home2 .zoom{
+  zoom: 0.6;
+}
+.home2  .form-control {
 
+  font-size: 11px;
+
+}
+
+.home2  .form-select {
+  font-size: 11px;
+ 
+}
+
+.home2  .input-group-text {
+  font-size: 11px;
+}
 .login{
   margin-top: 140px;
   background-color: whitesmoke;
@@ -465,11 +553,11 @@ label{
 }
 
 .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {
-  color: whitesmoke !important; 
+  color: whitesmoke !important;
 }
 
 .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {
-  color: whitesmoke !important; 
+  color: whitesmoke !important;
 }
 
 .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47 > .sidenav---navitem---9uL5T {
